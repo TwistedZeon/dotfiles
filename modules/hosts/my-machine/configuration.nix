@@ -5,6 +5,7 @@
       self.nixosModules.NixOSPartsHardware
       self.nixosModules.niri
       self.nixosModules.zen-browser
+      #self.nixosModules.git
     ];
 
     # Flakes
