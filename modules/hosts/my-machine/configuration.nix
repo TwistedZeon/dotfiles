@@ -7,10 +7,22 @@
       self.nixosModules.zen-browser
       self.nixosModules.git
       self.nixosModules.mpv
+      self.nixosModules.pipewire
     ];
 
     # Flakes
     nix.settings.experimental-features = [ "nix-command" "flakes" ];
+    
+    # Disable channels completely
+    # nix = {
+    #     channel.enable = false;
+    #     registry = (lib.mapAttrs (_: flake: { inherit flake; }) inputs);
+    #     nixPath = lib.mapAttrsToList (n: _: "${n}") inputs;
+    #     settings = {
+    #         nix-path = lib.mapAttrsToList (n: _: "${n}") inputs;
+    #         flake-registry = ""; # optional, ensures flakes are truly self-contained
+    #     };
+    # }
 
     # Bootloader.
     boot.loader.systemd-boot.enable = true;
@@ -47,22 +59,6 @@
 
     # Enable CUPS to print documents.
     services.printing.enable = true;
-
-    # Enable sound with pipewire.
-    services.pulseaudio.enable = false;
-    security.rtkit.enable = true;
-    services.pipewire = {
-      enable = true;
-      alsa.enable = true;
-      alsa.support32Bit = true;
-      pulse.enable = true;
-      # If you want to use JACK applications, uncomment this
-      #jack.enable = true;
-
-      # use the example session manager (no others are packaged yet so this is enabled by default,
-      # no need to redefine it in your config for now)
-      #media-session.enable = true;
-    };
 
     # Enable touchpad support (enabled default in most desktopManager).
     # services.xserver.libinput.enable = true;
