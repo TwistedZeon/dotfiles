@@ -1,6 +1,6 @@
 { self, inputs, ... }: {
   flake.nixosModules.git = { pkgs, ... }: {
-    enviroment.systemPackages = [
+    environment.systemPackages = [
       pkgs.git
     ];
   };  
