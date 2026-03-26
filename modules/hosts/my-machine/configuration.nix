@@ -13,7 +13,7 @@
     # Flakes
     nix.settings.experimental-features = [ "nix-command" "flakes" ];
     
-    # Disable channels completely
+    # Disable channels completely.
     nix = {
         channel.enable = false;
         registry = (lib.mapAttrs (_: flake: { inherit flake; }) inputs);
@@ -22,10 +22,23 @@
             nix-path = lib.mapAttrsToList (n: _: "${n}") inputs;
             flake-registry = ""; # optional, ensures flakes are truly self-contained
         };
-    };
+     };
+
+    # Zram
+    # zramSwap.enable = true; # Creates a zram block device and uses it as a swap device
+
+    # Xbox controller driver.
+    hardware.xone.enable = true;
+
+    # Udev rules.
+    services.udev.extraRules = ''
+      ACTION=="add", SUBSYSTEM=="leds", DRIVERS=="xone-gip-gamepad", KERNELS=="gip0.0", ATTR{brightness}="2"
+      ACTION=="change", SUBSYSTEM=="leds", DRIVERS=="xone-gip-gamepad", KERNELS=="gip0.0", ATTR{brightness}="2"
+    '';
 
     # Bootloader.
-    boot.loader.systemd-boot.enable = true;
+    # boot.loader.systemd-boot.enable = true;
+    boot.loader.limine.enable = true;
     boot.loader.efi.canTouchEfiVariables = true;
 
     networking.hostName = "nixos"; # Define your hostname.
