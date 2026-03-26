@@ -1,4 +1,4 @@
-{ self, inputs, ... }: {
+{ self, inputs, lib, ... }: {
 
   flake.nixosModules.NixOSPartsConfiguration = { config, pkgs, ... }: {
     imports = [ # Include the results of the hardware scan.
@@ -14,15 +14,15 @@
     nix.settings.experimental-features = [ "nix-command" "flakes" ];
     
     # Disable channels completely
-    # nix = {
-    #     channel.enable = false;
-    #     registry = (lib.mapAttrs (_: flake: { inherit flake; }) inputs);
-    #     nixPath = lib.mapAttrsToList (n: _: "${n}") inputs;
-    #     settings = {
-    #         nix-path = lib.mapAttrsToList (n: _: "${n}") inputs;
-    #         flake-registry = ""; # optional, ensures flakes are truly self-contained
-    #     };
-    # }
+    nix = {
+        channel.enable = false;
+        registry = (lib.mapAttrs (_: flake: { inherit flake; }) inputs);
+        nixPath = lib.mapAttrsToList (n: _: "${n}") inputs;
+        settings = {
+            nix-path = lib.mapAttrsToList (n: _: "${n}") inputs;
+            flake-registry = ""; # optional, ensures flakes are truly self-contained
+        };
+    };
 
     # Bootloader.
     boot.loader.systemd-boot.enable = true;
