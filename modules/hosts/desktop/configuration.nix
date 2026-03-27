@@ -8,6 +8,7 @@
       self.nixosModules.git
       self.nixosModules.mpv
       self.nixosModules.pipewire
+      self.nixosModules.gaming
     ];
 
     # Flakes
