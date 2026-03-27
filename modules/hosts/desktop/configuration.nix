@@ -10,6 +10,10 @@
       self.nixosModules.pipewire
       # self.nixosModules.gaming
       # self.nixosModules.communication
+      
+      # disko
+      # inputs.disko.nixosModules.disko
+      # self.diskoConfigurations.NixOSPartsConfiguration
     ];
 
     # Flakes
