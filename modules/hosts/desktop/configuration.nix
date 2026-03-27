@@ -8,7 +8,8 @@
       self.nixosModules.git
       self.nixosModules.mpv
       self.nixosModules.pipewire
-      self.nixosModules.gaming
+      # self.nixosModules.gaming
+      # self.nixosModules.communication
     ];
 
     # Flakes
@@ -42,7 +43,7 @@
     boot.loader.limine.enable = true;
     boot.loader.efi.canTouchEfiVariables = true;
 
-    networking.hostName = "nixos"; # Define your hostname.
+    networking.hostName = "zeon-nixos"; # Define your hostname.
     # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
     # Configure network proxy if necessary
@@ -87,15 +88,16 @@
       ];
     };
 
-    # Install firefox.
-    programs.firefox.enable = true;
-
     # Allow unfree packages
     nixpkgs.config.allowUnfree = true;
 
     # List packages installed in system profile. To search, run:
     # $ nix search wget
     environment.systemPackages = with pkgs; [
+    # btop
+    # filezilla
+    # gimp
+    # libreoffice
     #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by   default.
     #  wget
     ];

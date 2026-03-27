@@ -26,11 +26,13 @@
       # dxvk
       gamescope
       mangohud
+      goverlay
       # r2modman
       heroic
       # er-patcher
       # steamtinkerlaunch
       prismlauncher
+      ryubing
     ];
   };
 }
