@@ -1,8 +1,8 @@
 { self, inputs, lib, ... }: {
-
   flake.nixosModules.NixOSPartsConfiguration = { config, pkgs, ... }: {
     imports = [ # Include the results of the hardware scan.
       self.nixosModules.NixOSPartsHardware
+      self.nixosModules.gnome
       # self.nixosModules.niri
       self.nixosModules.zen-browser
       self.nixosModules.git
@@ -32,6 +32,12 @@
 
     # Zram
     # zramSwap.enable = true; # Creates a zram block device and uses it as a swap device
+    
+    # Amd GPU
+    # hardware.graphics = {
+    #   enable = true;
+    #   enable32bit = true;
+    # };
 
     # Xbox controller driver.
     hardware.xone.enable = true;
@@ -66,10 +72,6 @@
     # Enable the X11 windowing system.
     services.xserver.enable = true;
 
-    # Enable the GNOME Desktop Environment.
-    services.xserver.displayManager.gdm.enable = true;
-    services.xserver.desktopManager.gnome.enable = true;
-
     # Configure keymap in X11
     services.xserver.xkb = {
       layout = "us";
@@ -85,6 +87,7 @@
     # Define a user account. Don't forget to set a password with ‘passwd’.
     users.users.zeon = {
       isNormalUser = true;
+      initialHashedPassword = "$y$j9T$n8i3fa/lueN0ieqBO58kX.$3LvXEMCnbUq/ZN2epM0FrG83twXJ8Xwa8czfVxfGrb.";
       description = "Zeon";
       extraGroups = [ "networkmanager" "wheel" ];
       packages = with pkgs; [
