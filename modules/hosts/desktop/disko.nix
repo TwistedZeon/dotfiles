@@ -21,9 +21,9 @@
                   mountOptions = [ "umask=0077" ];
                 };
               };
-              plainSwap = {
+              swap = {
                 size = "16G";
-                conent = {
+                content = {
                   type = "swap";
                   discardPolicy = "both";
                   resumeDevice = false;
