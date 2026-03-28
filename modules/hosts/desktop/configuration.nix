@@ -3,7 +3,7 @@
   flake.nixosModules.NixOSPartsConfiguration = { config, pkgs, ... }: {
     imports = [ # Include the results of the hardware scan.
       self.nixosModules.NixOSPartsHardware
-      self.nixosModules.niri
+      # self.nixosModules.niri
       self.nixosModules.zen-browser
       self.nixosModules.git
       self.nixosModules.mpv

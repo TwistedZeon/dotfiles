@@ -27,6 +27,8 @@
                   type = "swap";
                   discardPolicy = "both";
                   resumeDevice = false;
+                };
+              };
               root = {
                 size = "100%";
                 content = {
