@@ -13,7 +13,7 @@
       
       # disko
       # inputs.disko.nixosModules.disko
-      # self.diskoConfigurations.NixOSPartsConfiguration
+      # self.diskoConfigurations.NixOSParts
     ];
 
     # Flakes
