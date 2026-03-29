@@ -2,6 +2,7 @@
   flake.nixosModules.desktopConfiguration = { config, pkgs, ... }: {
     imports = [ # Include the results of the hardware scan.
       self.nixosModules.desktopHardware
+      self.nixosModules.homeManager
       self.nixosModules.gnome
       # self.nixosModules.niri
       self.nixosModules.zen-browser
@@ -104,7 +105,6 @@
     # List packages installed in system profile. To search, run:
     # $ nix search wget
     environment.systemPackages = with pkgs; [
-    home-manager
     # btop
     # filezilla
     # gimp
