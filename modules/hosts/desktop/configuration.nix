@@ -15,7 +15,7 @@
       # inputs.disko.nixosModules.disko
       # self.diskoConfigurations.desktop
     ];
-
+    
     # Flakes
     nix.settings.experimental-features = [ "nix-command" "flakes" ];
     
@@ -47,6 +47,9 @@
       ACTION=="add", SUBSYSTEM=="leds", DRIVERS=="xone-gip-gamepad", KERNELS=="gip0.0", ATTR{brightness}="2"
       ACTION=="change", SUBSYSTEM=="leds", DRIVERS=="xone-gip-gamepad", KERNELS=="gip0.0", ATTR{brightness}="2"
     '';
+
+    # Fish
+    # programs.fish.enable = true;
 
     # Bootloader.
     # boot.loader.systemd-boot.enable = true;
@@ -101,6 +104,7 @@
     # List packages installed in system profile. To search, run:
     # $ nix search wget
     environment.systemPackages = with pkgs; [
+    home-manager
     # btop
     # filezilla
     # gimp
