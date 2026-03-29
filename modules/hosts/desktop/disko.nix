@@ -1,5 +1,5 @@
 { self, inputs, ... }: {
-  flake.diskoConfigurations.NixOSParts = {
+  flake.diskoConfigurations.desktop = {
     disko.devices = {
       disk = {
         main = {

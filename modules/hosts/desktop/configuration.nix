@@ -1,7 +1,7 @@
 { self, inputs, lib, ... }: {
-  flake.nixosModules.NixOSPartsConfiguration = { config, pkgs, ... }: {
+  flake.nixosModules.desktopConfiguration = { config, pkgs, ... }: {
     imports = [ # Include the results of the hardware scan.
-      self.nixosModules.NixOSPartsHardware
+      self.nixosModules.desktopHardware
       self.nixosModules.gnome
       # self.nixosModules.niri
       self.nixosModules.zen-browser
@@ -13,7 +13,7 @@
       
       # disko
       # inputs.disko.nixosModules.disko
-      # self.diskoConfigurations.NixOSParts
+      # self.diskoConfigurations.desktop
     ];
 
     # Flakes

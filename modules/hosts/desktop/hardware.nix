@@ -1,6 +1,6 @@
 { self, inputs, ... }: {
   
-  flake.nixosModules.NixOSPartsHardware = { config, lib, pkgs, modulesPath, ... }: {
+  flake.nixosModules.desktopHardware = { config, lib, pkgs, modulesPath, ... }: {
     imports =[ 
       (modulesPath + "/profiles/qemu-guest.nix")
     ];
