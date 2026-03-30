@@ -1,4 +1,9 @@
 { self, inputs, lib, ... }: {
+  imports = [ 
+            inputs.flake-parts.flakeModules.modules
+            inputs.home-manager.flakeModules.home-manager
+            ];
+  
   flake.nixosModules.desktopConfiguration = { config, pkgs, ... }: {
     imports = [ # Include the results of the hardware scan.
       self.nixosModules.desktopHardware

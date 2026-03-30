@@ -5,9 +5,9 @@
       home-manager.users.zeon = { config, pkgs, ... }: {
         # all you home modules here
         imports = [
-          self.homeModules.apps
-          # self.homeModules.fastfetch
-          # self.homeModules.ghostty
+          self.homeModules.fish
+          self.homeModules.fastfetch
+          self.homeModules.ghostty
         ];
       
         home.stateVersion = "25.11";
