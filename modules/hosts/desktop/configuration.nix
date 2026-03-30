@@ -22,6 +22,21 @@
       # self.diskoConfigurations.desktop
     ];
     
+    # ZFS
+    boot = {
+            supportedFilesystems.zfs = true;
+            zfs = {
+              devNodes =
+                if config.hardware.cpu.intel.updateMicrocode then "/dev/disk/by-id" else "/dev/disk/by-partuuid";
+            };
+          };
+          services.zfs = {
+            autoScrub.enable = true;
+            trim.enable = true;
+          };
+          
+    networking.hostId = "f3c50b52";
+    
     # Flakes
     nix.settings.experimental-features = [ "nix-command" "flakes" ];
     
