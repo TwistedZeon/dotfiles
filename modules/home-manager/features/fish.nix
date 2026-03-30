@@ -20,7 +20,7 @@
                   else
                       cd /home/zeon/udpbd-server/build && sudo ./udpbd-server.x86_64 /dev/sda2
                   end";
-           ps2-remount = "sudo mount -t exfat -o uid=1000,gid=1000 /dev/sda2 /mnt/PS2"
+           ps2-remount = "sudo mount -t exfat -o uid=1000,gid=1000 /dev/sda2 /mnt/PS2";
            
            dockerssh = "ssh root@192.168.0.194";
       };
