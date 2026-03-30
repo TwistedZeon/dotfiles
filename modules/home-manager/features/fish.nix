@@ -22,7 +22,7 @@
                   end";
            ps2-remount = "sudo mount -t exfat -o uid=1000,gid=1000 /dev/sda2 /mnt/PS2"
            
-           dockerssh = "ssh root@192.168.0.194"
+           dockerssh = "ssh root@192.168.0.194";
       };
     };
   };
