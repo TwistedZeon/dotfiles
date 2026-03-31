@@ -52,7 +52,7 @@
     # Garbage collection
     nix.gc = {
       automatic = true;
-      dates = weekly;
+      dates = "weekly";
       options = "--delete-older-tan 30d";
     };
 
