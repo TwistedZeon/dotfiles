@@ -15,8 +15,8 @@
       self.nixosModules.git
       self.nixosModules.mpv
       self.nixosModules.pipewire
-      # self.nixosModules.gaming
-      # self.nixosModules.communication
+      self.nixosModules.gaming
+      self.nixosModules.communication
       
       # disko
       # inputs.disko.nixosModules.disko
@@ -38,13 +38,13 @@
      };
 
     # Zram
-    # zramSwap.enable = true; # Creates a zram block device and uses it as a swap device
+    zramSwap.enable = true; # Creates a zram block device and uses it as a swap device
     
     # Amd GPU
-    # hardware.graphics = {
-    #   enable = true;
-    #   enable32bit = true;
-    # };
+    hardware.graphics = {
+      enable = true;
+      enable32bit = true;
+    };
 
     # Optimise store
     nix.optimise.automatic = true;
@@ -64,9 +64,6 @@
       ACTION=="add", SUBSYSTEM=="leds", DRIVERS=="xone-gip-gamepad", KERNELS=="gip0.0", ATTR{brightness}="2"
       ACTION=="change", SUBSYSTEM=="leds", DRIVERS=="xone-gip-gamepad", KERNELS=="gip0.0", ATTR{brightness}="2"
     '';
-
-    # Fish
-    # programs.fish.enable = true;
 
     # Bootloader.
     # boot.loader.systemd-boot.enable = true;
@@ -121,10 +118,10 @@
     # List packages installed in system profile. To search, run:
     # $ nix search wget
     environment.systemPackages = with pkgs; [
-    # btop
-    # filezilla
-    # gimp
-    # libreoffice
+    btop
+    filezilla
+    gimp
+    libreoffice
     #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by   default.
     #  wget
     ];
