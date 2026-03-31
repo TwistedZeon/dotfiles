@@ -46,6 +46,16 @@
     #   enable32bit = true;
     # };
 
+    # Optimise store
+    nix.optimise.automatic = true;
+
+    # Garbage collection
+    nix.gc = {
+      automatic = true;
+      dates = weekly;
+      options = "--delete-older-tan 30d";
+    };
+
     # Xbox controller driver.
     hardware.xone.enable = true;
 
