@@ -1,5 +1,5 @@
 { self, inputs, ... }: {
-  flake.nixosModules.gnome = { pkgs, ... }: {
+  flake.nixosModules.gnome = { pkgs, lib, ... }: {
     # Enable the GNOME Desktop Environment.
     services.displayManager.gdm.enable = true;
     services.desktopManager.gnome.enable = true;
@@ -43,9 +43,9 @@
             accel-profile = "flat";
           };
           # Automatic Screen Blank
-          #"org/gnome/desktop/session" = {
-          #  idle-delay = "0";
-          #};
+          "org/gnome/desktop/session" = {
+            idle-delay = lib.gvariant.mkUint32 0;
+          };
           # Automatic Suspend
           "org/gnome/settings-daemon/plugins/power" = {
             sleep-inactive-ac-type = "nothing";

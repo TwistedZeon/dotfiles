@@ -119,6 +119,14 @@
     gimp
     libreoffice
     pwvucontrol
+    feishin
+    
+    # Improved which for nix
+    (writeShellApplication {
+        name = "nwhich";
+        text = /* sh */ ''readlink -f "$(which "$1")"'';
+    })
+    
     #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by   default.
     #  wget
     ];
