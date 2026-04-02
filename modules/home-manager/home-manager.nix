@@ -15,6 +15,7 @@
           self.homeModules.ghostty
           self.homeModules.vesktop
           self.homeModules.mangohud
+          self.homeModules.dconf
         ];
       
         home.stateVersion = "25.11";
