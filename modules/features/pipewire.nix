@@ -44,6 +44,26 @@
             }
           ];
         };
+        # Line-In Loopback
+        # pipewire."my-loopback-0" = {
+        #   "context.modules" = [
+        #     {
+        #       "name" = "libpipewire-module-loopback";
+        #       "args" = {
+        #         "capture.props" = {
+        #           "target.object" = "alsa_input.pci-0000_0d_00.4.analog-stereo";
+        #           "node.dont-reconnect" = true;
+        #           "node.passive" = true;
+        #         };
+        #         "playback.props" = {
+        #           "target.object" = "alsa_output.pci-0000_0d_00.4.analog-stereo";
+        #           "node.dont-reconnect" = true;
+        #           "node.passive" = true;
+        #         };
+        #       };
+        #     }
+        #   ];
+        # };
 
         # https://discourse.nixos.org/t/pipewire-rnnoise-module-wont-work/58975/12
         # pipewire."99-input-denoising" = {

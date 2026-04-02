@@ -25,7 +25,6 @@
       steam-run
       # dxvk
       gamescope
-      mangohud
       goverlay
       # r2modman
       heroic

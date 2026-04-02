@@ -12,6 +12,7 @@
            theme = "Adwaita Dark";
            background-opacity = "0.95";
            command = "SHELL=${lib.getExe pkgs.fish} fish";
+           maximize = true;
       };
     };
   };
