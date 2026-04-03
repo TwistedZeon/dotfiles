@@ -61,6 +61,9 @@
       ACTION=="change", SUBSYSTEM=="leds", DRIVERS=="xone-gip-gamepad", KERNELS=="gip0.0", ATTR{brightness}="2"
     '';
 
+    # NFS
+    boot.supportedFilesystems = [ "nfs" ];
+
     # Bootloader.
     # boot.loader.systemd-boot.enable = true;
     boot.loader.limine.enable = true;

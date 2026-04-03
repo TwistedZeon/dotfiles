@@ -77,6 +77,30 @@
            ]
          ];
        };
+       "org/gnome/nautilus/window-state" = {
+         maximized = true;
+       };
+       "org/gnome/nautilus/preferences" = {
+         default-folder-viewer = "icon-view";
+       };
+       "org/gtk/gtk4/settings/file-chooser" = {
+         show-hidden = true;
+       };
+       "org/gnome/nautilus/list-view" = {
+         default-zoom-level = "small";
+         default-column-order = [
+           "name"
+           "size"
+           "type"
+           "date_modified"
+         ];
+         default-visible-columns = [
+           "name"
+           "size"
+           "type"
+           "data_modified"
+         ];
+       };
     };
   };
 }
