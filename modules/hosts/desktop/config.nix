@@ -63,6 +63,9 @@
 
     # NFS
     boot.supportedFilesystems = [ "nfs" ];
+    
+    # Enable plymouth # Enables logo animation when booting
+    boot.plymouth.enable = true;
 
     # Bootloader.
     # boot.loader.systemd-boot.enable = true;
@@ -105,7 +108,7 @@
       isNormalUser = true;
       initialHashedPassword = "$y$j9T$n8i3fa/lueN0ieqBO58kX.$3LvXEMCnbUq/ZN2epM0FrG83twXJ8Xwa8czfVxfGrb.";
       description = "Zeon";
-      extraGroups = [ "networkmanager" "wheel" ];
+      extraGroups = [ "networkmanager" "wheel" "gamemode" ];
       packages = with pkgs; [
       #  thunderbird
       ];
