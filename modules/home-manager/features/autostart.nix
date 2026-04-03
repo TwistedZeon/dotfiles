@@ -5,7 +5,7 @@
          [Desktop Entry]
          Type=Application
          Name=Vesktop
-         Exec=${pkgs.vesktop}/bin/vesktop
+         Exec=sh -c "sleep 10s && ${pkgs.vesktop}/bin/vesktop
          X-GNOME-Autostart-enabled=true
        '';
        xdg.configFile."autostart/thunderbird.desktop".text = ''

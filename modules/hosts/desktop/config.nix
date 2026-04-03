@@ -10,7 +10,7 @@
       self.nixosModules.zfs
       self.nixosModules.homeManager
       self.nixosModules.gnome
-      # self.nixosModules.niri
+      self.nixosModules.niri
       self.nixosModules.zen-browser
       self.nixosModules.git
       self.nixosModules.mpv
@@ -120,6 +120,7 @@
     # List packages installed in system profile. To search, run:
     # $ nix search wget
     environment.systemPackages = with pkgs; [
+    xdg-desktop-portal-gnome
     btop
     filezilla
     gimp
