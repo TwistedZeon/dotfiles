@@ -4,6 +4,9 @@
       enable = true;
       package = self.packages.${pkgs.stdenv.hostPlatform.system}.myNiri;
     };
+    environment.systemPackages = with pkgs; [
+      quickshell
+    ];
   };
 
   perSystem = { pkgs, lib, self', ... }: { 
@@ -51,10 +54,12 @@
         };
         
         spawn-at-startup = [
-          (lib.getExe self'.packages.myNoctalia)
+          (lib.getExe self'.packages.noctalia-shell)
+          #(lib.getExe pkgs.steam)
+          (lib.getExe pkgs.thunderbird)
         ];
         
-        #spawn-sh-at-startup = "sleep 10s && vesktop";
+        spawn-sh-at-startup = "sleep 10s && ${lib.getExe pkgs.vesktop}";
         
         xwayland-satellite.path = lib.getExe pkgs.xwayland-satellite;
         
@@ -84,44 +89,44 @@
         binds = {
           "Mod+Return".spawn-sh = "${lib.getExe pkgs.ghostty}";
           "Mod+Q".close-window = _: {};
-          "Mod+S".spawn-sh = "${lib.getExe self'.packages.myNoctalia} ipc call launcher toggle";
+          "Mod+S".spawn-sh = "${lib.getExe self'.packages.noctalia-shell} ipc call launcher toggle";
           "Mod+Shift+S".screenshot-window = _: { };
           "Mod+Ctrl+S".screenshot-screen = _: { };
           "Mod+Shift+Slash".show-hotkey-overlay = _: { };
-          "Mod+Shift+Q".spawn-sh = "qs -c noctalia-shell ipc call sessionMenu toggle";
-          "Mod+E".spawn = "nautilus";
+          "Mod+Shift+Q".spawn-sh = "${lib.getExe self'.packages.noctalia-shell} ipc call sessionMenu toggle";
+          "Mod+E".spawn = "${lib.getExe pkgs.nautilus}";
           # Media Controls 
           "XF86AudioRaiseVolume" = _: {
             props.allow-when-locked = true;
-            content.spawn-sh = "qs -c noctalia-shell ipc call volume increase";
+            content.spawn-sh = "${lib.getExe self'.packages.noctalia-shell} ipc call volume increase";
           };
           "XF86AudioLowerVolume" = _: {
             props.allow-when-locked = true;
-            content.spawn-sh = "qs -c noctalia-shell ipc call volume decrease";
+            content.spawn-sh = "${lib.getExe self'.packages.noctalia-shell} ipc call volume decrease";
           };
           "XF86AudioMute" = _: {
             props.allow-when-locked = true;
-            content.spawn-sh = "qs -c noctalia-shell ipc call volume muteOutput";
+            content.spawn-sh = "${lib.getExe self'.packages.noctalia-shell} ipc call volume muteOutput";
           };
           "XF86AudioMicMute" = _: {
             props.allow-when-locked = true;
-            content.spawn-sh = "qs -c noctalia-shell ipc call volume muteInput";
+            content.spawn-sh = "${lib.getExe self'.packages.noctalia-shell} ipc call volume muteInput";
           };
           "XF86AudioNext" = _: {
             props.allow-when-locked = true;
-            content.spawn-sh = "qs -c noctalia-shell ipc call media next";
+            content.spawn-sh = "${lib.getExe self'.packages.noctalia-shell} ipc call media next";
           };
           "XF86AudioPrev" = _: {
             props.allow-when-locked = true;
-            content.spawn-sh = "qs -c noctalia-shell ipc call media previous";
+            content.spawn-sh = "${lib.getExe self'.packages.noctalia-shell} ipc call media previous";
           };
           "XF86AudioPlay" = _: {
             props.allow-when-locked = true;
-            content.spawn-sh = "qs -c noctalia-shell ipc call media playPause";
+            content.spawn-sh = "${lib.getExe self'.packages.noctalia-shell} ipc call media playPause";
           };
           "XF86AudioPause" = _: {
             props.allow-when-locked = true;
-            content.spawn-sh = "qs -c noctalia-shell ipc call media playPause";
+            content.spawn-sh = "${lib.getExe self'.packages.noctalia-shell} ipc call media playPause";
           };
           # Window Movement and Focus
           "Mod+Left".focus-column-left = _: { };

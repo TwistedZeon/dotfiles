@@ -9,7 +9,7 @@
       home-manager.users.zeon = { config, pkgs, ... }: {
         # all you home modules here
         imports = [
-          self.homeModules.autostart
+          #self.homeModules.autostart
           self.homeModules.fish
           self.homeModules.fastfetch
           self.homeModules.ghostty
