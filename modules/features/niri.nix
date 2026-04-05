@@ -264,35 +264,35 @@
         window-rules = [
          {
           matches = [{app-id = "steam";}];
-          open-maximized = true;
+          open-maximized-to-edges = true;
           open-on-workspace = "Gaming";
          }
          { 
           matches = [{app-id = "vesktop";}];
-          open-maximized = true;
+          open-maximized-to-edges = true;
           open-on-workspace = "Chat";
           block-out-from = "screencast";
          }
          { 
           matches = [{app-id = "mumble";}];
-          open-maximized = true;
+          open-maximized-to-edges = true;
           open-on-workspace = "Chat";
           block-out-from = "screencast";
          }
          {
           matches = [{app-id = "thunderbird";}];
-          open-maximized = true;
+          open-maximized-to-edges = true;
           open-on-workspace = "Chat";
           block-out-from = "screencast";
          }
          {
           matches = [{app-id = "zen";}];
-          open-maximized = true;
+          open-maximized-to-edges = true;
           block-out-from = "screencast";
          }
          {
           matches = [{app-id = "faugus-launcher";}];
-          open-maximized = true;
+          open-maximized-to-edges = true;
           open-on-workspace = "Gaming";
          }
          {
