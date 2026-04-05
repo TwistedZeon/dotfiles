@@ -8,6 +8,7 @@
     imports = [ # Include the results of the hardware scan.
       self.nixosModules.desktopHardware
       self.nixosModules.zfs
+      self.nixosModules.drives
       self.nixosModules.homeManager
       self.nixosModules.defaults
       self.nixosModules.gnome
