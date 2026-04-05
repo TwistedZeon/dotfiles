@@ -9,11 +9,11 @@
       self.nixosModules.desktopHardware
       self.nixosModules.zfs
       self.nixosModules.homeManager
+      self.nixosModules.defaults
       self.nixosModules.gnome
       self.nixosModules.niri
       self.nixosModules.zen-browser
       self.nixosModules.git
-      self.nixosModules.mpv
       self.nixosModules.pipewire
       self.nixosModules.gaming
       self.nixosModules.communication
@@ -114,9 +114,6 @@
       ];
     };
 
-    # Allow unfree packages
-    nixpkgs.config.allowUnfree = true;
-
     # List packages installed in system profile. To search, run:
     # $ nix search wget
     environment.systemPackages = with pkgs; [
@@ -131,6 +128,11 @@
     (writeShellApplication {
         name = "nwhich";
         text = /* sh */ ''readlink -f "$(which "$1")"'';
+    })
+    
+    (writeShellApplication {
+        name = "noctalia-copy";
+        text = /* sh */ ''nix run nixpkgs#noctalia-shell ipc call state all > ~/nixos/modules/features/noctalia.json'';
     })
     
     #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by   default.
@@ -152,7 +154,9 @@
 
     # Open ports in the firewall.
     # networking.firewall.allowedTCPPorts = [ ... ];
+    networking.firewall.allowedTCPPortRanges = [ { from = 1714; to = 1764; } ];
     # networking.firewall.allowedUDPPorts = [ ... ];
+    networking.firewall.allowedUDPPortRanges = [ { from = 1714; to = 1764; } ];
     # Or disable the firewall altogether.
     # networking.firewall.enable = false;
 

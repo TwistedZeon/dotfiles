@@ -16,6 +16,8 @@
           self.homeModules.vesktop
           self.homeModules.mangohud
           self.homeModules.dconf
+          self.homeModules.mpv
+          self.homeModules.clipboard
         ];
       
         home.stateVersion = "25.11";

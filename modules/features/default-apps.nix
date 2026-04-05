@@ -1,9 +1,11 @@
 { self, inputs, ... }: {
-  flake.nixosModules.gnome = { pkgs, lib, ... }: {
+  flake.nixosModules.defaults = { pkgs, lib, ... }: {
     xdg.mime.defaultApplications = {
-      #"application/pdf" = "org.pwmt.zathura.desktop";
+      "application/pdf" = "org.gnome.Papers.desktop";
       "x-scheme-handler/http" = "zen.desktop";
       "x-scheme-handler/https" = "zen.desktop";
+      "x-scheme-handler/about" = "zen.desktop";
+      "x-scheme-handler/unknown" = "zen.desktop";
       "x-scheme-handler/mailto" = "thunderbird.desktop";
       "text/html" = "zen.desktop";
       "application/x-extension-htm" = "zen.desktop";
@@ -12,16 +14,9 @@
       "application/xhtml+xml" = "zen.desktop";
       "application/x-extension-xhtml" = "zen.desktop";
       "application/x-extension-xht" = "zen.desktop";
-      "video/mp4" = "mpv.desktop";
-      "video/mkv" = "mpv.desktop";
-      "video/x-matroska" = "mpv.desktop";
-      "video/webm" = "mpv.desktop";
-      "video/avi" = "mpv.desktop";
-      "video/x-msvideo" = "mpv.desktop";
-      "video/ogg" = "mpv.desktop";
-      "video/quicktime" = "mpv.desktop";
-      "video/x-flv" = "mpv.desktop";
-      "video/mpeg" = "mpv.desktop";
+      "video/*" = "mpv.desktop";
+      "image/*" = "org.gnome.Loupe.desktop";
+      "inode/directory" = "nemo";
     };
   };
 }

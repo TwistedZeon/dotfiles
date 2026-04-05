@@ -6,7 +6,13 @@
     };
     environment.systemPackages = with pkgs; [
       quickshell
+      nemo
+      yazi
+      qview
+      posy-cursors
+      kdePackages.kdeconnect-kde
     ];
+    security.polkit.enable = true;
   };
 
   perSystem = { pkgs, lib, self', ... }: { 
@@ -53,10 +59,14 @@
           workspace-auto-back-and-forth = _: {};  # Enable workspace back & forth switching
         };
         
+        cursor = {
+          xcursor-theme = "Posy_Cursor";
+        };
+        
         spawn-at-startup = [
           (lib.getExe self'.packages.noctalia-shell)
-          #(lib.getExe pkgs.steam)
           (lib.getExe pkgs.thunderbird)
+          "steam"
         ];
         
         spawn-sh-at-startup = "sleep 10s && ${lib.getExe pkgs.vesktop}";
@@ -94,7 +104,7 @@
           "Mod+Ctrl+S".screenshot-screen = _: { };
           "Mod+Shift+Slash".show-hotkey-overlay = _: { };
           "Mod+Shift+Q".spawn-sh = "${lib.getExe self'.packages.noctalia-shell} ipc call sessionMenu toggle";
-          "Mod+E".spawn = "${lib.getExe pkgs.nautilus}";
+          "Mod+E".spawn = "${lib.getExe pkgs.nemo}";
           # Media Controls 
           "XF86AudioRaiseVolume" = _: {
             props.allow-when-locked = true;
