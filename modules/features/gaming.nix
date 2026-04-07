@@ -5,6 +5,7 @@
     programs = {
       gamemode.enable = true;
       gamescope.enable = true;
+      gamescope.capSysNice = false;
       steam = {
         enable = true;
         extraCompatPackages = with pkgs; [

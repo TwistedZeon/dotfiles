@@ -8,7 +8,6 @@
            full = true;
            no_display = true;
            fps_limit = "141";
-           offset = "-3";
          };
        };
      };

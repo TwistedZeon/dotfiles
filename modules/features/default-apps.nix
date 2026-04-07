@@ -15,7 +15,7 @@
       "application/x-extension-xhtml" = "zen.desktop";
       "application/x-extension-xht" = "zen.desktop";
       "video/*" = "mpv.desktop";
-      "image/*" = "org.gnome.Loupe.desktop";
+      "image/*" = "com.interversehq.qView.desktop";
       "inode/directory" = "nemo";
     };
   };

@@ -130,17 +130,38 @@
             "unreadBadgeColor": "primary"
           },
           {
-            "defaultSettings": {
-              "enableTodoIntegration": false,
-              "notecardsEnabled": true,
-              "pincardsEnabled": true,
-              "showCloseButton": true
+            "colorizeSystemIcon": "none",
+            "enableColorization": false,
+            "generalTooltipText": "Clipboard history",
+            "hideMode": "alwaysExpanded",
+            "icon": "clipboard",
+            "id": "CustomButton",
+            "ipcIdentifier": "",
+            "leftClickExec": "nix run nixpkgs#noctalia-shell ipc call launcher clipboard",
+            "leftClickUpdateText": true,
+            "maxTextLength": {
+              "horizontal": 10,
+              "vertical": 10
             },
-            "id": "plugin:clipper"
-          },
-          {
-            "defaultSettings": {},
-            "id": "plugin:kde-connect"
+            "middleClickExec": "",
+            "middleClickUpdateText": false,
+            "parseJson": false,
+            "rightClickExec": "",
+            "rightClickUpdateText": false,
+            "showExecTooltip": false,
+            "showIcon": true,
+            "showTextTooltip": true,
+            "textCollapse": "",
+            "textCommand": "",
+            "textIntervalMs": 3000,
+            "textStream": false,
+            "wheelDownExec": "",
+            "wheelDownUpdateText": false,
+            "wheelExec": "",
+            "wheelMode": "unified",
+            "wheelUpExec": "",
+            "wheelUpUpdateText": false,
+            "wheelUpdateText": false
           },
           {
             "displayMode": "alwaysShow",
@@ -244,8 +265,8 @@
       "reverseScroll": false
     },
     "ui": {
-      "fontDefault": "Adwaita Sans",
-      "fontFixed": "monospace",
+      "fontDefault": "Roboto",
+      "fontFixed": "Roboto Mono",
       "fontDefaultScale": 1,
       "fontFixedScale": 1,
       "tooltipsEnabled": true,
@@ -345,7 +366,7 @@
       "favorites": []
     },
     "appLauncher": {
-      "enableClipboardHistory": false,
+      "enableClipboardHistory": true,
       "autoPasteClipboard": false,
       "enableClipPreview": true,
       "clipboardWrapText": true,
@@ -703,21 +724,6 @@
     },
     "desktopWidgetsEditMode": false,
     "display": {
-      "DP-1": {
-        "name": "DP-1",
-        "connected": true,
-        "scale": 1,
-        "width": 1920,
-        "height": 1080,
-        "x": 0,
-        "y": 0,
-        "physical_width": 530,
-        "physical_height": 300,
-        "refresh_rate": 143980,
-        "vrr_supported": true,
-        "vrr_enabled": true,
-        "transform": "Normal"
-      },
       "HDMI-A-1": {
         "name": "HDMI-A-1",
         "connected": true,
@@ -732,10 +738,25 @@
         "vrr_supported": false,
         "vrr_enabled": false,
         "transform": "Normal"
+      },
+      "DP-1": {
+        "name": "DP-1",
+        "connected": true,
+        "scale": 1,
+        "width": 1920,
+        "height": 1080,
+        "x": 0,
+        "y": 0,
+        "physical_width": 530,
+        "physical_height": 300,
+        "refresh_rate": 143980,
+        "vrr_supported": true,
+        "vrr_enabled": false,
+        "transform": "Normal"
       }
     },
     "notificationsState": {
-      "lastSeenTs": 1775350049000
+      "lastSeenTs": 1775471620000
     },
     "changelogState": {
       "lastSeenVersion": "v4.7.1"

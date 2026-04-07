@@ -8,7 +8,7 @@
       alsa.support32Bit = true;
       pulse.enable = true;
       jack.enable = true;
-
+    
       extraConfig = {
         # cooler denoising
         pipewire."99-input-denoising" = {
@@ -43,6 +43,14 @@
               };
             }
           ];
+        };
+        
+        pipewire."98-crackling-fix" = {
+          "context.properties" = {
+            "default.clock.quantum" = 1024;
+            "default.clock.min-quantum" = 1024;
+            "default.clock.max-quantum" = 8192;
+          };
         };
 
         # https://discourse.nixos.org/t/pipewire-rnnoise-module-wont-work/58975/12

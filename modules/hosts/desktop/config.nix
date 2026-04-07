@@ -1,4 +1,4 @@
-{ self, inputs, lib, ... }: {
+{ self, inputs, lib, pkgs, self', ... }: {
   imports = [ 
             inputs.flake-parts.flakeModules.modules
             inputs.home-manager.flakeModules.home-manager
@@ -42,6 +42,17 @@
       enable = true;
       enable32Bit = true;
     };
+
+    programs.nix-ld = {
+      enable = true;
+      libraries = pkgs.steam-run.args.multiPkgs pkgs;
+    };
+
+    # services.ananicy = {
+    #   enable = true;
+    #   package = pkgs.ananicy-cpp;
+    #   rulesProvider = pkgs.ananicy-rules-cachyos;
+    # };
 
     # Optimise store
     nix.optimise.automatic = true;
@@ -115,6 +126,19 @@
       ];
     };
 
+    # Fonts
+    fonts.packages = with pkgs; [
+      noto-fonts
+      noto-fonts-cjk-sans
+      noto-fonts-color-emoji
+      source-code-pro
+      source-sans-pro
+      source-serif-pro
+      roboto-mono
+      roboto
+      font-awesome
+    ];
+
     # List packages installed in system profile. To search, run:
     # $ nix search wget
     environment.systemPackages = with pkgs; [
@@ -124,13 +148,13 @@
     libreoffice
     pwvucontrol
     feishin
+    localsend
     
     # Improved which for nix
     (writeShellApplication {
         name = "nwhich";
         text = /* sh */ ''readlink -f "$(which "$1")"'';
-    })
-    
+    })    
     (writeShellApplication {
         name = "noctalia-copy";
         text = /* sh */ ''nix run nixpkgs#noctalia-shell ipc call state all > ~/nixos/modules/features/noctalia.json'';

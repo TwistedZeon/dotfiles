@@ -9,6 +9,7 @@
          "nofail" # Prevent system from failing if this drive doesn't mount
          "x-gvfs-show"
        ];
+     };
      fileSystems."/mnt/Linux-Extra" = {
        device = "/dev/disk/by-uuid/47e9db01-f966-4fc1-a44d-9a3e737483eb";
        fsType = "btrfs";
@@ -18,6 +19,7 @@
          "nofail" # Prevent system from failing if this drive doesn't mount
          "x-gvfs-show"
        ];
+     };
      fileSystems."/mnt/Massive-HDD" = {
        device = "/dev/disk/by-uuid/537870f1-e0f6-439a-b604-8225669127c0";
        fsType = "btrfs";
@@ -27,6 +29,6 @@
          "nofail" # Prevent system from failing if this drive doesn't mount
          "x-gvfs-show"
        ];
- };
-  };
+     };
+   };
 }
