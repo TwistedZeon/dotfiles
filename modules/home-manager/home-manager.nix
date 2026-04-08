@@ -1,7 +1,13 @@
-{ inputs, self, ... }:
+{
+  inputs,
+  self,
+  ...
+}:
 {
   flake.nixosModules.homeManager =
-    { config, pkgs, ... }:
+    {
+      ...
+    }:
     {
       imports = [ inputs.home-manager.nixosModules.home-manager ];
 
@@ -10,7 +16,9 @@
       home-manager.useGlobalPkgs = true;
 
       home-manager.users.zeon =
-        { config, pkgs, ... }:
+        {
+          ...
+        }:
         {
           # all you home modules here
           imports = [

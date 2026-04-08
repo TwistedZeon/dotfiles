@@ -1,7 +1,14 @@
-{ self, inputs, ... }:
+{
+  self,
+  inputs,
+  ...
+}:
 {
   flake.nixosModules.niri =
-    { pkgs, ... }:
+    {
+      pkgs,
+      ...
+    }:
     {
       programs.niri = {
         enable = true;
@@ -9,7 +16,8 @@
       };
       environment.systemPackages = with pkgs; [
         quickshell
-        nemo
+        nemo-with-extensions
+        file-roller
         yazi
         qview
         posy-cursors
@@ -26,6 +34,33 @@
         QT_QPA_PLATFORMTHEME = "gtk3";
       };
       security.polkit.enable = true;
+      # User's credentials manager
+      services.gnome.gnome-keyring.enable = true;
+      xdg.portal = {
+        enable = true;
+        wlr.enable = true;
+        extraPortals = with pkgs; [
+          xdg-desktop-portal-gtk
+          xdg-desktop-portal-wlr
+          xdg-desktop-portal-gnome
+        ];
+      };
+      environment.etc."xdg-desktop-portal/niri-portal.conf".text = ''
+        	[preferred]
+        	default=gtk
+        	org.freedesktop.impl.portal.FileChooser=gtk
+        	org.freedesktop.impl.portal.AppChooser=gtk
+        	org.freedesktop.impl.portal.Print=gtk
+        	org.freedesktop.impl.portal.Notification=gtk
+        	org.freedesktop.impl.portal.Inhibit=gtk
+        	org.freedesktop.impl.portal.Access=gtk
+        	org.freedesktop.impl.portal.Account=gtk
+        	org.freedesktop.impl.portal.Email=gtk
+        	org.freedesktop.impl.portal.DynamicLauncher=gtk
+        	org.freedesktop.impl.portal.RemoteDesktop=wlr
+        	org.freedesktop.impl.portal.ScreenCast=wlr
+        	org.freedesktop.impl.portal.ScreenShot=wlr
+      '';
     };
 
   perSystem =
@@ -69,7 +104,7 @@
               off = _: { };
             };
           };
-          
+
           input = {
             mouse = {
               # Disable acceleration

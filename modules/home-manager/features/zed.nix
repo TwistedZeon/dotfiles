@@ -1,4 +1,6 @@
-{ inputs, self, ... }:
+{
+  ...
+}:
 {
   flake.homeModules.zed = {
     programs.home-manager.enable = true;

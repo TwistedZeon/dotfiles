@@ -1,7 +1,15 @@
-{ self, inputs, ... }: {
-  flake.nixosModules.git = { pkgs, ... }: {
-    environment.systemPackages = [
-      pkgs.git
-    ];
-  };  
+{
+  ...
+}:
+{
+  flake.nixosModules.git =
+    {
+      pkgs,
+      ...
+    }:
+    {
+      environment.systemPackages = [
+        pkgs.git
+      ];
+    };
 }

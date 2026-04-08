@@ -1,4 +1,9 @@
-{ self,inputs, ... }: {
+{
+  self,
+  inputs,
+  ...
+}:
+{
   flake.nixosConfigurations.vm = inputs.nixpkgs.lib.nixosSystem {
     modules = [
       self.nixosModules.vmConfiguration
