@@ -7,6 +7,7 @@
   flake.nixosModules.niri =
     {
       pkgs,
+      lib,
       ...
     }:
     {
@@ -15,9 +16,9 @@
         package = self.packages.${pkgs.stdenv.hostPlatform.system}.myNiri;
       };
       environment.systemPackages = with pkgs; [
-        quickshell
         nemo-with-extensions
         file-roller
+        quickshell
         yazi
         qview
         posy-cursors
@@ -28,12 +29,14 @@
         nixd
         nixfmt
         biome
+        adwaita-icon-theme
       ];
       nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
       environment.variables = {
         QT_QPA_PLATFORMTHEME = "gtk3";
       };
       security.polkit.enable = true;
+      services.gvfs.enable = true;
       # User's credentials manager
       services.gnome.gnome-keyring.enable = true;
       xdg.portal = {
@@ -61,6 +64,44 @@
         	org.freedesktop.impl.portal.ScreenCast=wlr
         	org.freedesktop.impl.portal.ScreenShot=wlr
       '';
+      # Icon themes
+      environment.etc."gtk-3.0/settings.ini".text = ''
+        [Settings]
+        gtk-icon-theme-name=Adwaita
+      '';
+      environment.etc."gtk-4.0/settings.ini".text = ''
+        [Settings]
+        gtk-icon-theme-name=Adwaita
+      '';
+      # Display Manager
+      services.displayManager.ly = {
+        enable = true;
+        settings = {
+          numlock = true;
+          save = true;
+          text_in_center = true;
+          hide_version_string = true;
+          # animation = "matrix";
+          #bigclock = false;
+          # --- Color Settings (0xAARRGGBB) ---
+          # Background color of dialog box (Black)
+          bg = "0x00000000";
+          # Foreground text color (White: #FFFFFF)
+          fg = "0x00FFFFFF";
+          # Border color (Red: #FF0000)
+          border_fg = "0x00FF0000";
+          # Error message color (Red)
+          error_fg = "0x00FF0000";
+          # Clock color (Purple: #800080)
+          # clock_color = "#800080";
+        };
+      };
+      # This is so the main monitor TTY ly isn't cropped
+      systemd.services.display-manager = {
+        preStart = ''
+          ${lib.getExe pkgs.fbset} -xres 1920 -yres 1080
+        '';
+      };
     };
 
   perSystem =
@@ -87,6 +128,8 @@
               };
               variable-refresh-rate = _: {
                 props.on-demand = true;
+              };
+              focus-at-startup = _: {
               };
             };
             "HDMI-A-1" = {
@@ -173,11 +216,13 @@
               FILE=~/Pictures/Screenshots/$(date +"%Y-%m-%d %H-%M-%S").png
               ${pkgs.grim}/bin/grim -g "$(${pkgs.slurp}/bin/slurp)" - | ${pkgs.swappy}/bin/swappy -f - -o "$FILE"
             '';
-            #"Mod+Shift+S".screenshot-window = _: { };
+            # "Mod+Shift+D".screenshot-window = _: { };
             "Mod+Ctrl+S".screenshot-screen = _: { };
             "Mod+Shift+Slash".show-hotkey-overlay = _: { };
             "Mod+Shift+Q".spawn-sh = "${lib.getExe self'.packages.noctalia-shell} ipc call sessionMenu toggle";
-            "Mod+E".spawn = "${lib.getExe pkgs.nemo}";
+            "Mod+E".spawn = [
+              (lib.meta.getExe' pkgs.nemo-with-extensions "nemo")
+            ];
             # Media Controls
             "XF86AudioRaiseVolume" = _: {
               props.allow-when-locked = true;

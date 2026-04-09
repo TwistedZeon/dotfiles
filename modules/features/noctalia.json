@@ -68,6 +68,7 @@
             "maxWidth": 300,
             "scrollingMode": "hover",
             "showIcon": true,
+            "showText": true,
             "textColor": "none",
             "useFixedWidth": false
           },
@@ -183,7 +184,7 @@
             "colorizeDistroLogo": false,
             "colorizeSystemIcon": "none",
             "customIconPath": "",
-            "enableColorization": false,
+            "enableColorization": true,
             "icon": "noctalia",
             "id": "ControlCenter",
             "useDistroLogo": true
@@ -262,7 +263,8 @@
           "Del"
         ]
       },
-      "reverseScroll": false
+      "reverseScroll": false,
+      "smoothScrollEnabled": true
     },
     "ui": {
       "fontDefault": "Roboto",
@@ -282,6 +284,7 @@
       "name": "Toronto, Ontario",
       "weatherEnabled": false,
       "weatherShowEffects": true,
+      "weatherTaliaMascotAlways": false,
       "useFahrenheit": false,
       "use12hourFormat": true,
       "showWeekNumberInCalendar": false,
@@ -290,7 +293,8 @@
       "analogClockInCalendar": false,
       "firstDayOfWeek": -1,
       "hideWeatherTimezone": false,
-      "hideWeatherCityName": false
+      "hideWeatherCityName": false,
+      "autoLocate": false
     },
     "calendar": {
       "cards": [
@@ -328,6 +332,7 @@
       "showHiddenFiles": false,
       "viewMode": "recursive",
       "setWallpaperOnAllMonitors": true,
+      "linkLightAndDarkWallpapers": true,
       "fillMode": "crop",
       "fillColor": "#000000",
       "useSolidColor": false,
@@ -511,7 +516,6 @@
       "indicatorOpacity": 0.6
     },
     "network": {
-      "airplaneModeEnabled": false,
       "bluetoothRssiPollingEnabled": false,
       "bluetoothRssiPollIntervalMs": 60000,
       "networkPanelView": "wifi",
@@ -659,7 +663,8 @@
       "manualSunrise": "06:30",
       "manualSunset": "18:30",
       "generationMethod": "dysfunctional",
-      "monitorForColors": ""
+      "monitorForColors": "",
+      "syncGsettings": true
     },
     "templates": {
       "activeTemplates": [],
@@ -719,26 +724,11 @@
     "openedPanel": "",
     "lockScreenActive": false,
     "wallpapers": {
-      "DP-1": "/home/zeon/Pictures/Wallpaper/ahkanabackground.png",
-      "HDMI-A-1": "/home/zeon/Pictures/Wallpaper/ahkanabackground.png"
+      "HDMI-A-1": "/home/zeon/Pictures/Wallpaper/ahkanabackground.png",
+      "DP-1": "/home/zeon/Pictures/Wallpaper/ahkanabackground.png"
     },
     "desktopWidgetsEditMode": false,
     "display": {
-      "HDMI-A-1": {
-        "name": "HDMI-A-1",
-        "connected": true,
-        "scale": 1,
-        "width": 1440,
-        "height": 900,
-        "x": 1920,
-        "y": 50,
-        "physical_width": 410,
-        "physical_height": 260,
-        "refresh_rate": 74984,
-        "vrr_supported": false,
-        "vrr_enabled": false,
-        "transform": "Normal"
-      },
       "DP-1": {
         "name": "DP-1",
         "connected": true,
@@ -753,13 +743,28 @@
         "vrr_supported": true,
         "vrr_enabled": false,
         "transform": "Normal"
+      },
+      "HDMI-A-1": {
+        "name": "HDMI-A-1",
+        "connected": true,
+        "scale": 1,
+        "width": 1440,
+        "height": 900,
+        "x": 1920,
+        "y": 50,
+        "physical_width": 410,
+        "physical_height": 260,
+        "refresh_rate": 74984,
+        "vrr_supported": false,
+        "vrr_enabled": false,
+        "transform": "Normal"
       }
     },
     "notificationsState": {
-      "lastSeenTs": 1775471620000
+      "lastSeenTs": 1775698719000
     },
     "changelogState": {
-      "lastSeenVersion": "v4.7.1"
+      "lastSeenVersion": "v4.7.5"
     },
     "colorSchemesList": {
       "schemes": [

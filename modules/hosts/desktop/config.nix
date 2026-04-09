@@ -23,7 +23,7 @@
         self.nixosModules.drives
         self.nixosModules.homeManager
         self.nixosModules.defaults
-        self.nixosModules.gnome
+        # self.nixosModules.gnome
         self.nixosModules.niri
         self.nixosModules.zen-browser
         self.nixosModules.git
@@ -47,6 +47,9 @@
           ];
         };
       };
+
+      # NixOS's default if no other display manager is set
+      services.xserver.displayManager.lightdm.enable = false;
 
       # Zram
       zramSwap.enable = true; # Creates a zram block device and uses it as a swap device
