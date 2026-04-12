@@ -8,16 +8,17 @@
       enable = true;
       settings = {
         logo = {
-          source = "nixos";
-          padding = {
-            right = 1;
-          };
+          type = "none";
+          # source = "nixos";
+          # height = 20;
+          # padding = {
+          # right = 1;
         };
         display = {
           size = {
             binaryPrefix = "si";
           };
-          color = "blue";
+          color = "red";
           separator = ": ";
         };
         modules = [

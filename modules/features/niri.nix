@@ -18,6 +18,7 @@
       environment.systemPackages = with pkgs; [
         nemo-with-extensions
         file-roller
+        ffmpegthumbnailer
         quickshell
         yazi
         qview
@@ -188,7 +189,7 @@
 
           layout = {
             focus-ring = {
-              width = 4;
+              width = 3;
               active-color = "#c26554";
               inactive-color = "#505050";
               urgent-color = "#9b0000";
@@ -198,7 +199,7 @@
             };
           };
 
-          layout.gaps = 5;
+          layout.gaps = 6;
 
           hotkey-overlay = {
             # Avoid auto-showing the important hotkeys menu.
@@ -379,41 +380,103 @@
           window-rules = [
             {
               matches = [ { app-id = "steam"; } ];
-              open-maximized-to-edges = true;
+              open-maximized-to-edges = false;
+              open-maximized = true;
+              open-on-workspace = "Gaming";
+            }
+            {
+              matches = [
+                {
+                  app-id = "steam";
+                  title = "Friends List";
+                }
+              ];
+              open-maximized-to-edges = false;
+              open-maximized = false;
               open-on-workspace = "Gaming";
             }
             {
               matches = [ { app-id = "vesktop"; } ];
-              open-maximized-to-edges = true;
+              open-maximized-to-edges = false;
+              open-maximized = true;
               open-on-workspace = "Chat";
               block-out-from = "screencast";
             }
             {
-              matches = [ { app-id = "mumble"; } ];
-              open-maximized-to-edges = true;
+              matches = [
+                {
+                  app-id = "mumble";
+                  title = "Mumble";
+                }
+              ];
+              open-maximized-to-edges = false;
+              open-maximized = true;
+              open-on-workspace = "Chat";
+              block-out-from = "screencast";
+            }
+            {
+              matches = [
+                {
+                  app-id = "mumble";
+                  title = "Mumble Configuration";
+                }
+              ];
+              open-maximized-to-edges = false;
+              open-maximized = true;
+              open-on-workspace = "Chat";
+              block-out-from = "screencast";
+            }
+            {
+              matches = [
+                {
+                  app-id = "mumble";
+                  title = "Mumble Server Connect";
+                }
+              ];
+              open-maximized-to-edges = false;
+              open-maximized = false;
+              open-floating = false;
               open-on-workspace = "Chat";
               block-out-from = "screencast";
             }
             {
               matches = [ { app-id = "thunderbird"; } ];
-              open-maximized-to-edges = true;
+              open-maximized-to-edges = false;
+              open-maximized = true;
               open-on-workspace = "Chat";
               block-out-from = "screencast";
             }
             {
               matches = [ { app-id = "zen"; } ];
-              open-maximized-to-edges = true;
+              open-maximized-to-edges = false;
+              open-maximized = true;
               block-out-from = "screencast";
             }
             {
               matches = [ { app-id = "faugus-launcher"; } ];
-              open-maximized-to-edges = true;
+              open-maximized-to-edges = false;
+              open-maximized = true;
+              open-on-workspace = "Gaming";
+            }
+            {
+              matches = [ { app-id = "org.prismlauncher.PrismLauncher"; } ];
               open-on-workspace = "Gaming";
             }
             {
               matches = [ { app-id = "com.interversehq.qView"; } ];
-              open-maximized-to-edges = true;
+              open-maximized-to-edges = false;
               block-out-from = "screencast";
+            }
+            {
+              matches = [ { app-id = "feishin"; } ];
+              open-maximized-to-edges = false;
+              open-maximized = true;
+            }
+            {
+              matches = [ { app-id = "nemo"; } ];
+              open-maximized-to-edges = false;
+              open-maximized = false;
+              open-floating = false;
             }
             {
               geometry-corner-radius = 10;

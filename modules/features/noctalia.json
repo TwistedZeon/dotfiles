@@ -15,7 +15,7 @@
       "widgetSpacing": 6,
       "contentPadding": 2,
       "fontScale": 1,
-      "enableExclusionZoneInset": true,
+      "enableExclusionZoneInset": false,
       "backgroundOpacity": 0.93,
       "useSeparateOpacity": false,
       "marginVertical": 4,
@@ -538,6 +538,20 @@
           "action": "lock",
           "command": "",
           "countdownEnabled": true,
+          "enabled": false,
+          "keybind": ""
+        },
+        {
+          "action": "hibernate",
+          "command": "",
+          "countdownEnabled": true,
+          "enabled": false,
+          "keybind": ""
+        },
+        {
+          "action": "logout",
+          "command": "",
+          "countdownEnabled": true,
           "enabled": true,
           "keybind": "1"
         },
@@ -549,39 +563,25 @@
           "keybind": "2"
         },
         {
-          "action": "hibernate",
+          "action": "reboot",
           "command": "",
           "countdownEnabled": true,
           "enabled": true,
           "keybind": "3"
         },
         {
-          "action": "reboot",
+          "action": "shutdown",
           "command": "",
           "countdownEnabled": true,
           "enabled": true,
           "keybind": "4"
         },
         {
-          "action": "logout",
-          "command": "",
-          "countdownEnabled": true,
-          "enabled": true,
-          "keybind": "5"
-        },
-        {
-          "action": "shutdown",
-          "command": "",
-          "countdownEnabled": true,
-          "enabled": true,
-          "keybind": "6"
-        },
-        {
           "action": "rebootToUefi",
           "command": "",
           "countdownEnabled": true,
-          "enabled": true,
-          "keybind": "7"
+          "enabled": false,
+          "keybind": ""
         },
         {
           "action": "userspaceReboot",
@@ -657,7 +657,7 @@
     },
     "colorSchemes": {
       "useWallpaperColors": true,
-      "predefinedScheme": "Ayu",
+      "predefinedScheme": "Noctalia (default)",
       "darkMode": true,
       "schedulingMode": "off",
       "manualSunrise": "06:30",
@@ -761,7 +761,7 @@
       }
     },
     "notificationsState": {
-      "lastSeenTs": 1775698719000
+      "lastSeenTs": 1775856436000
     },
     "changelogState": {
       "lastSeenVersion": "v4.7.5"
@@ -1438,6 +1438,46 @@
         },
         {
           "dark": {
+            "mError": "#d94a59",
+            "mHover": "#2d2a2e",
+            "mOnError": "#1d1b1d",
+            "mOnHover": "#e1e2d5",
+            "mOnPrimary": "#1d1b1d",
+            "mOnSecondary": "#e1e2d5",
+            "mOnSurface": "#e1e2d5",
+            "mOnSurfaceVariant": "#e1e2d5",
+            "mOnTertiary": "#e1e2d5",
+            "mOutline": "#000023",
+            "mPrimary": "#e1e2d5",
+            "mSecondary": "#2d2a2e",
+            "mShadow": "#120f18",
+            "mSurface": "#1d1b1d",
+            "mSurfaceVariant": "#262427",
+            "mTertiary": "#2d2a2e"
+          },
+          "light": {
+            "mError": "#d94a59",
+            "mHover": "#e6e4e8",
+            "mOnError": "#ffffff",
+            "mOnHover": "#1d1b1d",
+            "mOnPrimary": "#ffffff",
+            "mOnSecondary": "#2d2a2e",
+            "mOnSurface": "#1d1b1d",
+            "mOnSurfaceVariant": "#3a3a3a",
+            "mOnTertiary": "#2d2a2e",
+            "mOutline": "#b8b6bb",
+            "mPrimary": "#3a3a34",
+            "mSecondary": "#e6e4e8",
+            "mShadow": "#00000020",
+            "mSurface": "#ffffff",
+            "mSurfaceVariant": "#f3f2f5",
+            "mTertiary": "#f0eef2"
+          },
+          "name": "Mine",
+          "path": "Mine"
+        },
+        {
+          "dark": {
             "mError": "#dddddd",
             "mHover": "#cccccc",
             "mOnError": "#111111",
@@ -2109,7 +2149,7 @@
           "path": "Vesper"
         }
       ],
-      "timestamp": 1775207334
+      "timestamp": 1775806024
     },
     "ui": {
       "settingsSidebarExpanded": true

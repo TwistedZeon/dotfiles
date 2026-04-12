@@ -17,9 +17,11 @@
         gamescope.capSysNice = false;
         steam = {
           enable = true;
-          extraCompatPackages = with pkgs; [
-            proton-ge-bin
-          ];
+          remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
+          dedicatedServer.openFirewall = true; # Open ports for Source Dedicated Server hosting
+          # extraCompatPackages = with pkgs; [
+          #   proton-ge-bin
+          # ];
           extraPackages = with pkgs; [
             SDL2
             # er-patcher

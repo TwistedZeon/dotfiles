@@ -21,8 +21,10 @@
           theme = "Adwaita Dark";
           font-family = "Roboto Mono";
           background-opacity = "0.95";
+          window-padding-x = 5;
+          window-padding-y = 5;
           command = "SHELL=${lib.getExe pkgs.fish} fish";
-          maximize = true;
+          # maximize = true;
         };
       };
     };

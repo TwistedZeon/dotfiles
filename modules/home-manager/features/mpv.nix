@@ -23,6 +23,10 @@
           osd-font = "Adwaita Sans";
           border = false;
         };
+
+        extraInput = ''
+          ctrl+r cycle_values video-rotate "90" "180" "270" "0"
+        '';
       };
     };
 }

@@ -33,6 +33,7 @@
             self.homeModules.clipboard
             # self.homeModules.vscodium
             self.homeModules.zed
+            self.homeModules.gtk
           ];
 
           home.stateVersion = "25.11";
