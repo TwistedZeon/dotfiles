@@ -9,41 +9,77 @@
       settings = {
         logo = {
           type = "none";
-          # source = "nixos";
-          # height = 20;
+          # source = "nixos_old";
           # padding = {
-          # right = 1;
+          #   right = 1;
+          # };
         };
         display = {
           size = {
             binaryPrefix = "si";
           };
-          color = "red";
+          color = "#DB4343";
           separator = ": ";
         };
         modules = [
           "title"
-          "separator"
-          "os"
-          "host"
-          "kernel"
-          "uptime"
-          "packages"
-          "shell"
-          "display"
-          "wm"
-          "theme"
-          "icons"
-          "font"
-          "cursor"
-          "terminal"
-          "cpu"
-          "gpu"
-          "memory"
-          "swap"
-          "disk"
+          {
+            type = "custom";
+            format = "───────────────────────";
+          }
+          {
+            type = "os";
+            key = " OS";
+          }
+          {
+            type = "kernel";
+            key = "󰍛 Kernel";
+          }
+          {
+            type = "uptime";
+            key = " Uptime";
+          }
+          {
+            type = "packages";
+            key = "󰏗 Packages";
+          }
+          {
+            type = "shell";
+            key = "󰞷 Shell";
+          }
+          {
+            type = "wm";
+            key = "󱂬 WM";
+          }
+          {
+            type = "terminal";
+            key = "󰆍 Terminal";
+          }
+          {
+            type = "cpu";
+            key = "󰻠 CPU";
+          }
+          {
+            type = "gpu";
+            key = "󰍹 GPU";
+          }
+          {
+            type = "memory";
+            key = "󰑭 Memory";
+          }
+          {
+            type = "swap";
+            key = " Swap";
+          }
+          {
+            type = "disk";
+            key = "󰋊 Disk";
+          }
           "break"
-          "colors"
+          {
+            type = "colors";
+            symbol = "circle";
+          }
         ];
       };
     };

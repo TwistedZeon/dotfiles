@@ -60,6 +60,10 @@
         enable32Bit = true;
       };
 
+      environment.variables = {
+        MESA_SHADER_CACHE_MAX_SIZE = "12G";
+      };
+
       programs.nix-ld = {
         enable = true;
         libraries = pkgs.steam-run.args.multiPkgs pkgs;
@@ -100,6 +104,12 @@
       # boot.loader.systemd-boot.enable = true;
       boot.loader.limine.enable = true;
       boot.loader.efi.canTouchEfiVariables = true;
+
+      services.upower.enable = true;
+
+      services.power-profiles-daemon.enable = true;
+
+      hardware.bluetooth.enable = true;
 
       networking.hostName = "zeon-nixos"; # Define your hostname.
       # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -158,7 +168,13 @@
         roboto-mono
         roboto
         font-awesome
+        nerd-fonts.jetbrains-mono
       ];
+
+      programs.appimage = {
+        enable = true;
+        binfmt = true;
+      };
 
       # List packages installed in system profile. To search, run:
       # $ nix search wget
@@ -169,6 +185,9 @@
         libreoffice
         pwvucontrol
         feishin
+        handbrake
+        picard
+        rsgain
 
         # Improved which for nix
         (writeShellApplication {

@@ -10,6 +10,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    niri.url = "github:YaLTeR/niri";
+
     wrapper-modules.url = "github:BirdeeHub/nix-wrapper-modules";
 
     zen-browser.url = "github:youwen5/zen-browser-flake";

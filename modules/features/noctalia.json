@@ -9,15 +9,15 @@
       ],
       "density": "default",
       "showOutline": false,
-      "showCapsule": true,
+      "showCapsule": false,
       "capsuleOpacity": 1,
       "capsuleColorKey": "none",
-      "widgetSpacing": 6,
+      "widgetSpacing": 0,
       "contentPadding": 2,
       "fontScale": 1,
       "enableExclusionZoneInset": false,
-      "backgroundOpacity": 0.93,
-      "useSeparateOpacity": false,
+      "backgroundOpacity": 0.85,
+      "useSeparateOpacity": true,
       "marginVertical": 4,
       "marginHorizontal": 4,
       "frameThickness": 8,
@@ -31,13 +31,25 @@
       "widgets": {
         "left": [
           {
-            "colorizeSystemIcon": "none",
-            "customIconPath": "",
-            "enableColorization": false,
-            "icon": "rocket",
-            "iconColor": "none",
-            "id": "Launcher",
-            "useDistroLogo": false
+            "characterCount": 10,
+            "colorizeIcons": false,
+            "emptyColor": "secondary",
+            "enableScrollWheel": true,
+            "focusedColor": "error",
+            "followFocusedScreen": false,
+            "fontWeight": "medium",
+            "groupedBorderOpacity": 1,
+            "hideUnoccupied": false,
+            "iconScale": 0.8,
+            "id": "Workspace",
+            "labelMode": "name",
+            "occupiedColor": "none",
+            "pillSize": 0.6000000000000001,
+            "showApplications": false,
+            "showApplicationsHover": false,
+            "showBadge": true,
+            "showLabelsOnlyWhenOccupied": true,
+            "unfocusedIconsOpacity": 1
           },
           {
             "compactMode": false,
@@ -60,18 +72,9 @@
             "textColor": "none",
             "useMonospaceFont": true,
             "usePadding": true
-          },
-          {
-            "colorizeIcons": false,
-            "hideMode": "hidden",
-            "id": "ActiveWindow",
-            "maxWidth": 300,
-            "scrollingMode": "hover",
-            "showIcon": true,
-            "showText": true,
-            "textColor": "none",
-            "useFixedWidth": false
-          },
+          }
+        ],
+        "center": [
           {
             "compactMode": false,
             "hideMode": "hidden",
@@ -80,36 +83,19 @@
             "maxWidth": 300,
             "panelShowAlbumArt": true,
             "scrollingMode": "hover",
-            "showAlbumArt": true,
+            "showAlbumArt": false,
             "showArtistFirst": true,
             "showProgressRing": true,
             "showVisualizer": false,
             "textColor": "none",
             "useFixedWidth": false,
-            "visualizerType": "linear"
-          }
-        ],
-        "center": [
+            "visualizerType": "mirrored"
+          },
           {
-            "characterCount": 10,
-            "colorizeIcons": false,
-            "emptyColor": "secondary",
-            "enableScrollWheel": true,
-            "focusedColor": "primary",
-            "followFocusedScreen": false,
-            "fontWeight": "bold",
-            "groupedBorderOpacity": 1,
-            "hideUnoccupied": false,
-            "iconScale": 0.8,
-            "id": "Workspace",
-            "labelMode": "name",
-            "occupiedColor": "secondary",
-            "pillSize": 0.6,
-            "showApplications": false,
-            "showApplicationsHover": false,
-            "showBadge": true,
-            "showLabelsOnlyWhenOccupied": true,
-            "unfocusedIconsOpacity": 1
+            "colorName": "none",
+            "hideWhenIdle": true,
+            "id": "AudioVisualizer",
+            "width": 200
           }
         ],
         "right": [
@@ -179,19 +165,10 @@
             "id": "Clock",
             "tooltipFormat": "HH:mm ddd, MMM dd",
             "useCustomFont": false
-          },
-          {
-            "colorizeDistroLogo": false,
-            "colorizeSystemIcon": "none",
-            "customIconPath": "",
-            "enableColorization": true,
-            "icon": "noctalia",
-            "id": "ControlCenter",
-            "useDistroLogo": true
           }
         ]
       },
-      "mouseWheelAction": "none",
+      "mouseWheelAction": "workspace",
       "reverseScroll": false,
       "mouseWheelWrap": true,
       "middleClickAction": "none",
@@ -208,11 +185,11 @@
       "showScreenCorners": false,
       "forceBlackScreenCorners": false,
       "scaleRatio": 1,
-      "radiusRatio": 1,
-      "iRadiusRatio": 1,
+      "radiusRatio": 0.5,
+      "iRadiusRatio": 0.5,
       "boxRadiusRatio": 1,
       "screenRadiusRatio": 1,
-      "animationSpeed": 1,
+      "animationSpeed": 1.25,
       "animationDisabled": false,
       "compactLockScreen": false,
       "lockScreenAnimations": false,
@@ -268,14 +245,14 @@
     },
     "ui": {
       "fontDefault": "Roboto",
-      "fontFixed": "Roboto Mono",
+      "fontFixed": "JetBrainsMono Nerd Font",
       "fontDefaultScale": 1,
       "fontFixedScale": 1,
       "tooltipsEnabled": true,
       "scrollbarAlwaysVisible": true,
-      "boxBorderEnabled": false,
-      "panelBackgroundOpacity": 0.93,
-      "translucentWidgets": false,
+      "boxBorderEnabled": true,
+      "panelBackgroundOpacity": 0.85,
+      "translucentWidgets": true,
       "panelsAttachedToBar": true,
       "settingsPanelMode": "attached",
       "settingsPanelSideBarCardStyle": false
@@ -642,7 +619,7 @@
       "volumeStep": 5,
       "volumeOverdrive": false,
       "spectrumFrameRate": 30,
-      "visualizerType": "linear",
+      "visualizerType": "mirrored",
       "spectrumMirrored": true,
       "mprisBlacklist": [],
       "preferredPlayer": "",
@@ -656,7 +633,7 @@
       "backlightDeviceMappings": []
     },
     "colorSchemes": {
-      "useWallpaperColors": true,
+      "useWallpaperColors": false,
       "predefinedScheme": "Noctalia (default)",
       "darkMode": true,
       "schedulingMode": "off",
@@ -761,7 +738,7 @@
       }
     },
     "notificationsState": {
-      "lastSeenTs": 1775856436000
+      "lastSeenTs": 1776494119000
     },
     "changelogState": {
       "lastSeenVersion": "v4.7.5"
@@ -2149,7 +2126,7 @@
           "path": "Vesper"
         }
       ],
-      "timestamp": 1775806024
+      "timestamp": 1776408006
     },
     "ui": {
       "settingsSidebarExpanded": true

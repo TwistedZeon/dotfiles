@@ -16,7 +16,7 @@
           light = "One Light";
         };
         hour_format = "hour12";
-        buffer_font_family = "Roboto Mono";
+        buffer_font_family = "JetBrainsMono Nerd Font";
         vim_mode = false;
         diagnostics = {
           inline = {

@@ -90,7 +90,7 @@
           # Foreground text color (White: #FFFFFF)
           fg = "0x00FFFFFF";
           # Border color (Red: #FF0000)
-          border_fg = "0x00FF0000";
+          border_fg = "0x00DB4343";
           # Error message color (Red)
           error_fg = "0x00FF0000";
           # Clock color (Purple: #800080)
@@ -103,6 +103,27 @@
           ${lib.getExe pkgs.fbset} -xres 1920 -yres 1080
         '';
       };
+      # restart niri with new settings on rebuild
+      system.userActivationScripts = {
+        niri-reload-config = {
+          text = lib.getExe (
+            pkgs.writeShellApplication {
+              name = "niri-reload-config";
+              runtimeInputs = [
+                self.packages.${pkgs.stdenv.hostPlatform.system}.myNiri
+                pkgs.procps
+              ];
+              text = ''
+                if pgrep -x "niri" > /dev/null; then
+                  niri msg action load-config-file --path "${
+                    self.packages.${pkgs.stdenv.hostPlatform.system}.myNiri.configuration.constructFiles.generatedConfig.outPath
+                  }"
+                fi
+              '';
+            }
+          );
+        };
+      };
     };
 
   perSystem =
@@ -114,6 +135,7 @@
     }:
     {
       packages.myNiri = inputs.wrapper-modules.wrappers.niri.wrap {
+        package = inputs.niri.packages.${pkgs.stdenv.hostPlatform.system}.niri;
         inherit pkgs;
         settings = {
           outputs = {
@@ -154,8 +176,7 @@
               # Disable acceleration
               accel-profile = "flat";
 
-              # Faster scrolling with the mouse wheel.
-              scroll-factor = 2.0;
+              scroll-factor = 1.0;
             };
             keyboard = {
               numlock = _: { };
@@ -190,7 +211,7 @@
           layout = {
             focus-ring = {
               width = 3;
-              active-color = "#c26554";
+              active-color = "#DB4343";
               inactive-color = "#505050";
               urgent-color = "#9b0000";
               # active-gradient from="#80c8ff" to="#bbddff" angle=45
@@ -377,6 +398,14 @@
               open-on-output = "DP-1";
             };
           };
+
+          blur = {
+            passes = 3;
+            offset = 3;
+            noise = 0.02;
+            saturation = 1.5;
+          };
+
           window-rules = [
             {
               matches = [ { app-id = "steam"; } ];
@@ -479,7 +508,17 @@
               open-floating = false;
             }
             {
-              geometry-corner-radius = 10;
+              matches = [ { app-id = "com.mitchellh.ghostty"; } ];
+              open-maximized-to-edges = false;
+              open-maximized = false;
+              open-floating = false;
+              background-effect = {
+                blur = true;
+              };
+            }
+            {
+              geometry-corner-radius = 5;
+              draw-border-with-background = false;
               clip-to-geometry = true;
             }
           ];

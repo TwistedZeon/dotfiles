@@ -42,7 +42,11 @@
         # er-patcher
         # steamtinkerlaunch
         prismlauncher
+        openttd
         ryubing
+        pcsx2
+        dolphin-emu
+        retroarch-free
       ];
       nixpkgs.overlays = [
         # Removes fast math which can cause inaccuracies and blurry output

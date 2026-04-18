@@ -19,8 +19,10 @@
 
         settings = {
           theme = "Adwaita Dark";
-          font-family = "Roboto Mono";
-          background-opacity = "0.95";
+          font-family = "JetBrainsMono Nerd Font";
+          background-opacity = "0.80";
+          gtk-titlebar = false;
+          window-decoration = "none";
           window-padding-x = 5;
           window-padding-y = 5;
           command = "SHELL=${lib.getExe pkgs.fish} fish";
