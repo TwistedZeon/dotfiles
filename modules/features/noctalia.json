@@ -17,7 +17,7 @@
       "fontScale": 1,
       "enableExclusionZoneInset": false,
       "backgroundOpacity": 0.85,
-      "useSeparateOpacity": true,
+      "useSeparateOpacity": false,
       "marginVertical": 4,
       "marginHorizontal": 4,
       "frameThickness": 8,
@@ -738,7 +738,7 @@
       }
     },
     "notificationsState": {
-      "lastSeenTs": 1776494119000
+      "lastSeenTs": 1776621553000
     },
     "changelogState": {
       "lastSeenVersion": "v4.7.5"

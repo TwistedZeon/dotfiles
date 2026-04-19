@@ -19,66 +19,68 @@
             binaryPrefix = "si";
           };
           color = "#DB4343";
-          separator = ": ";
+          separator = "";
         };
         modules = [
-          "title"
           {
             type = "custom";
-            format = "───────────────────────";
+            key = "┌────────────────────────────────────────────────────────┐";
+          }
+          {
+            type = "custom";
+            key = "󰒓 System";
           }
           {
             type = "os";
-            key = " OS";
+            key = "│ ├ OS{#default}: {#}";
           }
           {
             type = "kernel";
-            key = "󰍛 Kernel";
+            key = "│ ├󰍛 Kernel{#default}: {#}";
           }
           {
             type = "uptime";
-            key = " Uptime";
+            key = "│ ├ Uptime{#default}: {#}";
           }
           {
-            type = "packages";
-            key = "󰏗 Packages";
-          }
-          {
-            type = "shell";
-            key = "󰞷 Shell";
+            type = "lm";
+            key = "│ ├󰍃 DM{#default}: {#}";
           }
           {
             type = "wm";
-            key = "󱂬 WM";
+            key = "│ ├󱂬 WM{#default}: {#}";
+          }
+          {
+            type = "shell";
+            key = "│ ├󰞷 Shell{#default}: {#}";
           }
           {
             type = "terminal";
-            key = "󰆍 Terminal";
+            key = "│ └󰆍 Terminal{#default}: {#}";
+          }
+          {
+            type = "custom";
+            key = "󰘚 Hardware";
           }
           {
             type = "cpu";
-            key = "󰻠 CPU";
+            key = "│ ├󰻠 CPU{#default}: {#}";
           }
           {
             type = "gpu";
-            key = "󰍹 GPU";
-          }
-          {
-            type = "memory";
-            key = "󰑭 Memory";
-          }
-          {
-            type = "swap";
-            key = " Swap";
+            key = "│ ├󰍹 GPU{#default}: {#}";
           }
           {
             type = "disk";
-            key = "󰋊 Disk";
+            key = "│ ├󰋊 Disk{#default}: {#}";
           }
-          "break"
           {
-            type = "colors";
-            symbol = "circle";
+            type = "memory";
+            key = "│ └󰑭 Memory{#default}: {#}";
+          }
+          {
+            type = "custom";
+            key = "└────────────────────────────────────────────────────────┘";
           }
         ];
       };

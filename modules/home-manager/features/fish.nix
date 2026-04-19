@@ -27,6 +27,26 @@
 
         dockerssh = "ssh root@192.168.0.194";
       };
+      functions.fish_prompt = {
+        body = ''
+          set_color "#DB4343"
+          echo -n (whoami)
+
+          set_color normal
+          echo -n "@"
+
+          set_color normal
+          echo -n (hostname)
+
+          set_color "#DB4343"
+          echo -n " "(prompt_pwd)
+
+          set_color normal
+          echo -n " > "
+
+          echo
+        '';
+      };
     };
   };
 }
