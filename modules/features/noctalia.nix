@@ -36,6 +36,25 @@
           cursor = "#DB4343";
           cursorText = "#5F150D";
         };
+        plugins = {
+          sources = [
+            {
+              enabled = true;
+              name = "Noctalia Plugins";
+              url = "https=//github.com/noctalia-dev/noctalia-plugins";
+            }
+          ];
+          states = {
+            polkit-agent = {
+              enabled = true;
+              sourceUrl = "https=//github.com/noctalia-dev/noctalia-plugins";
+            };
+          };
+          version = 2;
+        };
+        preInstalledPlugins = {
+          polkit-agent.src = "${inputs.noctalia-plugins.outPath}/polkit-agent";
+        };
       };
     };
 }

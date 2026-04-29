@@ -4,9 +4,7 @@
     "bar": {
       "barType": "simple",
       "position": "top",
-      "monitors": [
-        "DP-1"
-      ],
+      "monitors": ["DP-1"],
       "density": "default",
       "showOutline": false,
       "showCapsule": false,
@@ -217,28 +215,13 @@
       "lockScreenBlur": 0,
       "lockScreenTint": 0,
       "keybinds": {
-        "keyUp": [
-          "Up"
-        ],
-        "keyDown": [
-          "Down"
-        ],
-        "keyLeft": [
-          "Left"
-        ],
-        "keyRight": [
-          "Right"
-        ],
-        "keyEnter": [
-          "Return",
-          "Enter"
-        ],
-        "keyEscape": [
-          "Esc"
-        ],
-        "keyRemove": [
-          "Del"
-        ]
+        "keyUp": ["Up"],
+        "keyDown": ["Down"],
+        "keyLeft": ["Left"],
+        "keyRight": ["Right"],
+        "keyEnter": ["Return", "Enter"],
+        "keyEscape": ["Esc"],
+        "keyRemove": ["Del"]
       },
       "reverseScroll": false,
       "smoothScrollEnabled": true
@@ -573,9 +556,7 @@
       "enabled": true,
       "enableMarkdown": false,
       "density": "default",
-      "monitors": [
-        "DP-1"
-      ],
+      "monitors": ["DP-1"],
       "location": "top_right",
       "overlayLayer": true,
       "backgroundOpacity": 1,
@@ -608,11 +589,7 @@
       "autoHideMs": 2000,
       "overlayLayer": true,
       "backgroundOpacity": 1,
-      "enabledTypes": [
-        0,
-        1,
-        2
-      ],
+      "enabledTypes": [0, 1, 2],
       "monitors": []
     },
     "audio": {

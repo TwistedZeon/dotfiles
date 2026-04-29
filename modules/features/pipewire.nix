@@ -17,6 +17,7 @@
         alsa.support32Bit = true;
         pulse.enable = true;
         jack.enable = true;
+        extraLadspaPackages = [ pkgs.deepfilternet ];
 
         # Increase latency a bit to stop crackles
         extraConfig =
@@ -66,8 +67,8 @@
                       "nodes" = [
                         {
                           "type" = "ladspa";
-                          "name" = "DeepFilter Mono";
-                          "plugin" = "${pkgs.deepfilternet}/lib/ladspa/libdeep_filter_ladspa.so";
+                          "name" = "deepfilter";
+                          "plugin" = "libdeep_filter_ladspa";
                           "label" = "deep_filter_mono";
                           # "control" = {
                           #   "Attenuation Limit (dB)" = cfg.source.attenuation;

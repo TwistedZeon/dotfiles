@@ -47,6 +47,7 @@
         pcsx2
         dolphin-emu
         retroarch-free
+        tochd
       ];
       nixpkgs.overlays = [
         # Removes fast math which can cause inaccuracies and blurry output

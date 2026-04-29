@@ -10,11 +10,17 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    niri.url = "github:YaLTeR/niri";
+    noctalia-plugins = {
+      url = "github:noctalia-dev/noctalia-plugins";
+      flake = false;
+    };
 
     wrapper-modules.url = "github:BirdeeHub/nix-wrapper-modules";
 
-    zen-browser.url = "github:youwen5/zen-browser-flake";
+    zen-browser = {
+      url = "github:youwen5/zen-browser-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = inputs: inputs.flake-parts.lib.mkFlake { inherit inputs; } (inputs.import-tree ./modules);

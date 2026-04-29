@@ -224,7 +224,9 @@
           to = 1764;
         }
       ];
-      # networking.firewall.allowedUDPPorts = [ ... ];
+      networking.firewall.allowedUDPPorts = [
+        62966
+      ];
       networking.firewall.allowedUDPPortRanges = [
         {
           from = 1714;

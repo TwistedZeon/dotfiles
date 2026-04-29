@@ -135,7 +135,6 @@
     }:
     {
       packages.myNiri = inputs.wrapper-modules.wrappers.niri.wrap {
-        package = inputs.niri.packages.${pkgs.stdenv.hostPlatform.system}.niri;
         inherit pkgs;
         settings = {
           outputs = {
@@ -515,6 +514,12 @@
               background-effect = {
                 blur = true;
               };
+            }
+            {
+              matches = [ { title = "Authentication Required"; } ];
+              open-maximized-to-edges = false;
+              open-maximized = false;
+              open-floating = true;
             }
             {
               geometry-corner-radius = 5;
