@@ -48,6 +48,7 @@
         dolphin-emu
         retroarch-free
         tochd
+        r2modman
       ];
       nixpkgs.overlays = [
         # Removes fast math which can cause inaccuracies and blurry output
