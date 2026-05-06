@@ -34,6 +34,7 @@
             # self.homeModules.vscodium
             self.homeModules.zed
             self.homeModules.gtk
+            self.homeModules.firefox
           ];
 
           home.stateVersion = "25.11";

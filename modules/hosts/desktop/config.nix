@@ -188,6 +188,8 @@
         handbrake
         picard
         rsgain
+        vivaldi
+        vivaldi-ffmpeg-codecs
 
         # Improved which for nix
         (writeShellApplication {

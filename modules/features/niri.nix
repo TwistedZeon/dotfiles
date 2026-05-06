@@ -31,6 +31,7 @@
         nixfmt
         biome
         adwaita-icon-theme
+        inputs.niri-float-sticky.packages.${stdenv.hostPlatform.system}.default
       ];
       nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
       environment.variables = {
@@ -199,6 +200,7 @@
           spawn-sh-at-startup = [
             "sleep 10s && ${lib.getExe pkgs.vesktop}"
             "sleep 2s && steam"
+            "niri-float-sticky -app-id firefox -title Picture-in-Picture"
           ];
 
           xwayland-satellite.path = lib.getExe pkgs.xwayland-satellite;
@@ -473,6 +475,24 @@
               open-maximized = true;
               open-on-workspace = "Chat";
               block-out-from = "screencast";
+            }
+            {
+              matches = [
+                {
+                  app-id = "firefox";
+                  title = "Picture-in-Picture";
+                }
+              ];
+              open-floating = true;
+              default-floating-position = _: {
+                props = {
+                  x = 32;
+                  y = 32;
+                  relative-to = "top-right";
+                };
+              };
+              default-column-width.fixed = 480;
+              default-window-height.fixed = 270;
             }
             {
               matches = [ { app-id = "zen"; } ];

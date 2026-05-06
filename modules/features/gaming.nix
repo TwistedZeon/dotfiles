@@ -37,7 +37,6 @@
         dxvk
         gamescope
         goverlay
-        # r2modman
         heroic
         # er-patcher
         # steamtinkerlaunch
@@ -49,6 +48,7 @@
         retroarch-free
         tochd
         r2modman
+        scummvm
       ];
       nixpkgs.overlays = [
         # Removes fast math which can cause inaccuracies and blurry output
