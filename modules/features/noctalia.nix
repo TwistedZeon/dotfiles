@@ -10,6 +10,7 @@
     }:
     {
       packages.noctalia-shell = inputs.wrapper-modules.wrappers.noctalia-shell.wrap {
+        package = inputs.noctalia-shell.packages.${pkgs.stdenv.hostPlatform.system}.default;
         inherit pkgs;
         settings = (builtins.fromJSON (builtins.readFile ./noctalia.json)).settings;
         colors = {

@@ -1,4 +1,5 @@
 {
+  inputs,
   ...
 }:
 {
@@ -31,7 +32,7 @@
       };
 
       environment.systemPackages = with pkgs; [
-        faugus-launcher
+        inputs.self.packages.${pkgs.stdenv.hostPlatform.system}.faugus-launcher
         protonplus
         steam-run
         dxvk

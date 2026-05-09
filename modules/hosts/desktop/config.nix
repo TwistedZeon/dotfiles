@@ -25,7 +25,7 @@
         self.nixosModules.defaults
         # self.nixosModules.gnome
         self.nixosModules.niri
-        self.nixosModules.zen-browser
+        # self.nixosModules.zen-browser
         self.nixosModules.git
         self.nixosModules.pipewire
         self.nixosModules.gaming
@@ -188,8 +188,8 @@
         handbrake
         picard
         rsgain
-        vivaldi
-        vivaldi-ffmpeg-codecs
+        virt-viewer
+        cifs-utils
 
         # Improved which for nix
         (writeShellApplication {

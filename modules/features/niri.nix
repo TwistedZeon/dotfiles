@@ -19,7 +19,6 @@
         nemo-with-extensions
         file-roller
         ffmpegthumbnailer
-        quickshell
         yazi
         qview
         posy-cursors
@@ -31,6 +30,7 @@
         nixfmt
         biome
         adwaita-icon-theme
+        killall
         inputs.niri-float-sticky.packages.${stdenv.hostPlatform.system}.default
       ];
       nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
@@ -198,9 +198,10 @@
           ];
 
           spawn-sh-at-startup = [
-            "sleep 10s && ${lib.getExe pkgs.vesktop}"
+            "sleep 5s && ${lib.getExe pkgs.vesktop}"
             "sleep 2s && steam"
-            "niri-float-sticky -app-id firefox -title Picture-in-Picture"
+            "killall niri-float-sticky; niri-float-sticky -disable-auto-stick"
+            "sleep 5s && niri-float-sticky -app-id firefox -title Picture-in-Picture"
           ];
 
           xwayland-satellite.path = lib.getExe pkgs.xwayland-satellite;
@@ -493,6 +494,13 @@
               };
               default-column-width.fixed = 480;
               default-window-height.fixed = 270;
+              block-out-from = "screencast";
+            }
+            {
+              matches = [ { app-id = "firefox"; } ];
+              open-maximized-to-edges = false;
+              open-maximized = true;
+              block-out-from = "screencast";
             }
             {
               matches = [ { app-id = "zen"; } ];
