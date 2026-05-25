@@ -4,7 +4,9 @@
     "bar": {
       "barType": "simple",
       "position": "top",
-      "monitors": ["DP-1"],
+      "monitors": [
+        "DP-1"
+      ],
       "density": "default",
       "showOutline": false,
       "showCapsule": false,
@@ -116,10 +118,11 @@
           },
           {
             "colorizeSystemIcon": "none",
-            "enableColorization": false,
+            "colorizeSystemText": "none",
             "generalTooltipText": "Clipboard history",
             "hideMode": "alwaysExpanded",
             "icon": "clipboard",
+            "iconPosition": "left",
             "id": "CustomButton",
             "ipcIdentifier": "",
             "leftClickExec": "nix run nixpkgs#noctalia-shell ipc call launcher clipboard",
@@ -147,6 +150,15 @@
             "wheelUpExec": "",
             "wheelUpUpdateText": false,
             "wheelUpdateText": false
+          },
+          {
+            "deviceNativePath": "ps-controller-battery-a4:ae:12:b0:55:26",
+            "displayMode": "icon-always",
+            "hideIfIdle": false,
+            "hideIfNotDetected": true,
+            "id": "Battery",
+            "showNoctaliaPerformance": false,
+            "showPowerProfiles": false
           },
           {
             "displayMode": "alwaysShow",
@@ -215,13 +227,28 @@
       "lockScreenBlur": 0,
       "lockScreenTint": 0,
       "keybinds": {
-        "keyUp": ["Up"],
-        "keyDown": ["Down"],
-        "keyLeft": ["Left"],
-        "keyRight": ["Right"],
-        "keyEnter": ["Return", "Enter"],
-        "keyEscape": ["Esc"],
-        "keyRemove": ["Del"]
+        "keyUp": [
+          "Up"
+        ],
+        "keyDown": [
+          "Down"
+        ],
+        "keyLeft": [
+          "Left"
+        ],
+        "keyRight": [
+          "Right"
+        ],
+        "keyEnter": [
+          "Return",
+          "Enter"
+        ],
+        "keyEscape": [
+          "Esc"
+        ],
+        "keyRemove": [
+          "Del"
+        ]
       },
       "reverseScroll": false,
       "smoothScrollEnabled": true
@@ -556,7 +583,9 @@
       "enabled": true,
       "enableMarkdown": false,
       "density": "default",
-      "monitors": ["DP-1"],
+      "monitors": [
+        "DP-1"
+      ],
       "location": "top_right",
       "overlayLayer": true,
       "backgroundOpacity": 1,
@@ -589,7 +618,11 @@
       "autoHideMs": 2000,
       "overlayLayer": true,
       "backgroundOpacity": 1,
-      "enabledTypes": [0, 1, 2],
+      "enabledTypes": [
+        0,
+        1,
+        2
+      ],
       "monitors": []
     },
     "audio": {
@@ -715,10 +748,10 @@
       }
     },
     "notificationsState": {
-      "lastSeenTs": 1776621553000
+      "lastSeenTs": 1779749214000
     },
     "changelogState": {
-      "lastSeenVersion": "v4.7.5"
+      "lastSeenVersion": "v4.7.8"
     },
     "colorSchemesList": {
       "schemes": [
@@ -2103,7 +2136,7 @@
           "path": "Vesper"
         }
       ],
-      "timestamp": 1776408006
+      "timestamp": 1777317016
     },
     "ui": {
       "settingsSidebarExpanded": true

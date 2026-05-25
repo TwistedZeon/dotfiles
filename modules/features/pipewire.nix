@@ -25,7 +25,7 @@
             quantum = rec {
               rate = 48000;
               max = default * 2;
-              default = 512;
+              default = 1024;
               min = default / 2;
             };
           in

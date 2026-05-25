@@ -90,8 +90,12 @@
 
       # Udev rules.
       services.udev.extraRules = ''
+        # Dim Xbox Series X controller led
         ACTION=="add", SUBSYSTEM=="leds", DRIVERS=="xone-gip-gamepad", KERNELS=="gip0.0", ATTR{brightness}="2"
         ACTION=="change", SUBSYSTEM=="leds", DRIVERS=="xone-gip-gamepad", KERNELS=="gip0.0", ATTR{brightness}="2"
+
+        # Disable DS4 touchpad acting as mouse
+        ATTRS{name}=="Wireless Controller Touchpad", ENV{LIBINPUT_IGNORE_DEVICE}="1"
       '';
 
       # NFS
@@ -110,6 +114,7 @@
       services.power-profiles-daemon.enable = true;
 
       hardware.bluetooth.enable = true;
+      services.blueman.enable = true;
 
       networking.hostName = "zeon-nixos"; # Define your hostname.
       # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -198,7 +203,7 @@
         })
         (writeShellApplication {
           name = "noctalia-copy";
-          text = /* sh */ "nix run nixpkgs#noctalia-shell ipc call state all > ~/nixos/modules/features/noctalia.json";
+          text = /* sh */ "nix run noctalia-shell ipc call state all > ~/nixos/modules/features/noctalia.json";
         })
 
         #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by   default.
@@ -228,6 +233,7 @@
       ];
       networking.firewall.allowedUDPPorts = [
         62966
+        62967
       ];
       networking.firewall.allowedUDPPortRanges = [
         {

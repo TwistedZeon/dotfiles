@@ -26,6 +26,7 @@
       boot.initrd.kernelModules = [ ];
       boot.kernelModules = [
         "kvm-amd"
+        "hid-playstation"
       ];
       boot.extraModulePackages = [ ];
 

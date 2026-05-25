@@ -18,7 +18,7 @@
 
         server2-u = "sudo mount -t nfs 192.168.0.205:/750GB /mnt/Server4TB";
 
-        ps2 = "/home/zeon/udpfs_server/udpfsd -fsroot /mnt/4TB/PS2 -bind 192.168.0.129 -verbose";
+        ps2 = "/home/zeon/udpfs_server/udpfsd -fsroot /mnt/4TB/PS2 -bind 192.168.0.129:62967 -port 62966 -verbose";
 
         dockerssh = "ssh root@192.168.0.194";
       };
