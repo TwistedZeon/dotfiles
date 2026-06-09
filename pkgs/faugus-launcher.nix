@@ -21,15 +21,15 @@ let
     owner = "Faugus";
     repo = "faugus-launcher";
 
-    rev = "1.20.3";
+    rev = "1.21.1";
 
-    hash = "sha256-Mr+FAdaLgUXWUywifNu0dbpYuD7S2UHO69Vs/2FnsQY=";
+    hash = "sha256-ON3d0Kt+ZHp3+0SWDRGE5Z4gaVfh4+Y0XsJxfCXqkTs=";
   };
 in
 
 python3Packages.buildPythonApplication {
   pname = "faugus-launcher";
-  version = "1.20.3";
+  version = "1.21.1";
 
   inherit src;
   pyproject = false;

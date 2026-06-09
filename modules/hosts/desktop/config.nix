@@ -96,6 +96,7 @@
 
         # Disable DS4 touchpad acting as mouse
         ATTRS{name}=="Wireless Controller Touchpad", ENV{LIBINPUT_IGNORE_DEVICE}="1"
+        ATTRS{name}=="Sony Interactive Entertainment Wireless Controller Touchpad", ENV{LIBINPUT_IGNORE_DEVICE}="1"
       '';
 
       # NFS
@@ -195,6 +196,7 @@
         rsgain
         virt-viewer
         cifs-utils
+        gparted-full
 
         # Improved which for nix
         (writeShellApplication {
