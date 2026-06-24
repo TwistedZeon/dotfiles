@@ -194,7 +194,7 @@
           };
 
           spawn-at-startup = [
-            (lib.getExe self'.packages.noctalia)
+            (lib.getExe inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default)
             (lib.getExe pkgs.thunderbird)
           ];
 
@@ -235,8 +235,12 @@
           binds = {
             "Mod+Return".spawn-sh = "${lib.getExe pkgs.ghostty}";
             "Mod+Q".close-window = _: { };
-            "Mod+S".spawn-sh = "${lib.getExe self'.packages.noctalia} msg panel-toggle launcher";
-            "Mod+Ctrl+V".spawn-sh = "${lib.getExe self'.packages.noctalia} msg panel-toggle clipboard";
+            "Mod+S".spawn-sh = "${
+              lib.getExe inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
+            } msg panel-toggle launcher";
+            "Mod+Ctrl+V".spawn-sh = "${
+              lib.getExe inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
+            } msg panel-toggle clipboard";
             "Mod+Shift+S".spawn-sh = ''
               FILE=~/Pictures/Screenshots/$(date +"%Y-%m-%d %H-%M-%S").png
               ${pkgs.grim}/bin/grim -g "$(${pkgs.slurp}/bin/slurp)" - | ${pkgs.swappy}/bin/swappy -f - -o "$FILE"
@@ -244,42 +248,60 @@
             # "Mod+Shift+D".screenshot-window = _: { };
             "Mod+Ctrl+S".screenshot-screen = _: { };
             "Mod+Shift+Slash".show-hotkey-overlay = _: { };
-            "Mod+Shift+Q".spawn-sh = "${lib.getExe self'.packages.noctalia} msg panel-toggle session";
+            "Mod+Shift+Q".spawn-sh = "${
+              lib.getExe inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
+            } msg panel-toggle session";
             "Mod+E".spawn = [
               (lib.meta.getExe' pkgs.nemo-with-extensions "nemo")
             ];
             # Media Controls
             "XF86AudioRaiseVolume" = _: {
               props.allow-when-locked = true;
-              content.spawn-sh = "${lib.getExe self'.packages.noctalia} msg volume-up";
+              content.spawn-sh = "${
+                lib.getExe inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
+              } msg volume-up";
             };
             "XF86AudioLowerVolume" = _: {
               props.allow-when-locked = true;
-              content.spawn-sh = "${lib.getExe self'.packages.noctalia} msg volume-down";
+              content.spawn-sh = "${
+                lib.getExe inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
+              } msg volume-down";
             };
             "XF86AudioMute" = _: {
               props.allow-when-locked = true;
-              content.spawn-sh = "${lib.getExe self'.packages.noctalia} msg volume-mute";
+              content.spawn-sh = "${
+                lib.getExe inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
+              } msg volume-mute";
             };
             "XF86AudioMicMute" = _: {
               props.allow-when-locked = true;
-              content.spawn-sh = "${lib.getExe self'.packages.noctalia} msg mic-mute";
+              content.spawn-sh = "${
+                lib.getExe inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
+              } msg mic-mute";
             };
             "XF86AudioNext" = _: {
               props.allow-when-locked = true;
-              content.spawn-sh = "${lib.getExe self'.packages.noctalia} msg media next";
+              content.spawn-sh = "${
+                lib.getExe inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
+              } msg media next";
             };
             "XF86AudioPrev" = _: {
               props.allow-when-locked = true;
-              content.spawn-sh = "${lib.getExe self'.packages.noctalia} msg media previous";
+              content.spawn-sh = "${
+                lib.getExe inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
+              } msg media previous";
             };
             "XF86AudioPlay" = _: {
               props.allow-when-locked = true;
-              content.spawn-sh = "${lib.getExe self'.packages.noctalia} msg media toggle";
+              content.spawn-sh = "${
+                lib.getExe inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
+              } msg media toggle";
             };
             "XF86AudioPause" = _: {
               props.allow-when-locked = true;
-              content.spawn-sh = "${lib.getExe self'.packages.noctalia} msg media toggle";
+              content.spawn-sh = "${
+                lib.getExe inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
+              } msg media toggle";
             };
             # Window Movement and Focus
             "Mod+Left".focus-column-left = _: { };

@@ -125,6 +125,19 @@
     },
     "nixpkgs_2": {
       "locked": {
+        "lastModified": 1781577229,
+        "narHash": "sha256-rcUHdUtJEvMdNEl2Wq+YpHraHKfcer3KsBscpZEF2Yg=",
+        "rev": "567a49d1913ce81ac6e9582e3553dd90a955875f",
+        "type": "tarball",
+        "url": "https://releases.nixos.org/nixos/unstable/nixos-26.11pre1017464.567a49d1913c/nixexprs.tar.xz"
+      },
+      "original": {
+        "type": "tarball",
+        "url": "https://channels.nixos.org/nixos-unstable/nixexprs.tar.xz"
+      }
+    },
+    "nixpkgs_3": {
+      "locked": {
         "lastModified": 1780336545,
         "narHash": "sha256-vhVhuXzFrIOfcssC/9hDHx7MHzDKjF3keHuREOQqQiQ=",
         "owner": "NixOS",
@@ -141,16 +154,14 @@
     },
     "noctalia": {
       "inputs": {
-        "nixpkgs": [
-          "nixpkgs"
-        ]
+        "nixpkgs": "nixpkgs_2"
       },
       "locked": {
-        "lastModified": 1782318017,
-        "narHash": "sha256-juWoMgMmop/exi1RpY4eH75kDant/VfPw85Gw60xjj0=",
+        "lastModified": 1782322697,
+        "narHash": "sha256-4zu69w/TCdcxdvn3eX2EgiMVQGhPlA7GxacgdAI6TJA=",
         "owner": "noctalia-dev",
         "repo": "noctalia",
-        "rev": "5813f1c095cc6873e6f9ea00ac56eb42de475898",
+        "rev": "955a19dea882a9a389ec5baa5ef64a335628d407",
         "type": "github"
       },
       "original": {
@@ -187,7 +198,7 @@
     },
     "wrapper-modules": {
       "inputs": {
-        "nixpkgs": "nixpkgs_2"
+        "nixpkgs": "nixpkgs_3"
       },
       "locked": {
         "lastModified": 1782135443,

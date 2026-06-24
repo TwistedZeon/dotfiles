@@ -48,6 +48,14 @@
         };
       };
 
+      nix.settings = {
+        extra-substituters = [ "https://noctalia.cachix.org" ];
+        extra-trusted-public-keys = [
+          "noctalia.cachix.org-1:pCOR47nnMEo5thcxNDtzWpOxNFQsBRglJzxWPp3dkU4="
+        ];
+        trusted-users = [ "@wheel" ];
+      };
+
       # NixOS's default if no other display manager is set
       services.xserver.displayManager.lightdm.enable = false;
 

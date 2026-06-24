@@ -12,7 +12,6 @@
 
     noctalia = {
       url = "github:noctalia-dev/noctalia";
-      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     wrapper-modules.url = "github:BirdeeHub/nix-wrapper-modules";
