@@ -35,6 +35,8 @@
             self.homeModules.zed
             self.homeModules.gtk
             self.homeModules.firefox
+            inputs.noctalia.homeModules.default
+            self.homeModules.noctalia
           ];
 
           home.stateVersion = "25.11";

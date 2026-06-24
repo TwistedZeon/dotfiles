@@ -213,7 +213,7 @@
         })
         (writeShellApplication {
           name = "noctalia-copy";
-          text = /* sh */ "nix run noctalia-shell ipc call state all > ~/nixos/modules/features/noctalia.json";
+          text = /* sh */ "noctalia config export > ~/nixos/modules/home-manager/features/noctalia/noctalia-config.toml";
         })
 
         #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by   default.

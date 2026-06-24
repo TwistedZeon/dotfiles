@@ -1,0 +1,135 @@
+[bar.default]
+background_opacity = 0.84999998100101948
+center = [ "media" ]
+end = [ "tray", "notifications", "clipboard", "volume", "brightness", "battery", "clock", "control-center", "session" ]
+margin_edge = 0
+margin_ends = 0
+radius = 0
+start = [ "launcher", "wallpaper", "workspaces", "cpu", "ram" ]
+
+    [bar.default.monitor.HDMI-A-1]
+    enabled = false
+
+[desktop_widgets]
+schema_version = 2
+widget_order = []
+
+    [desktop_widgets.grid]
+    cell_size = 16
+    major_interval = 4
+    visible = true
+
+    [desktop_widgets.widget]
+
+[dock]
+auto_hide = true
+enabled = true
+reserve_space = false
+
+[idle]
+pre_action_fade_seconds = 0
+
+[location]
+auto_locate = true
+
+[lockscreen_widgets]
+enabled = false
+schema_version = 2
+widget_order = [ "lockscreen-login-box@DP-1", "lockscreen-login-box@HDMI-A-1" ]
+
+    [lockscreen_widgets.grid]
+    cell_size = 16
+    major_interval = 4
+    visible = true
+
+    [lockscreen_widgets.widget."lockscreen-login-box@DP-1"]
+    box_height = 0.0
+    box_width = 0.0
+    cx = 960.0
+    cy = 957.0
+    output = "DP-1"
+    rotation = 0.0
+    type = "login_box"
+
+    [lockscreen_widgets.widget."lockscreen-login-box@HDMI-A-1"]
+    box_height = 0.0
+    box_width = 0.0
+    cx = 720.0
+    cy = 777.0
+    output = "HDMI-A-1"
+    rotation = 0.0
+    type = "login_box"
+
+[plugins]
+enabled = []
+
+[shell]
+font_family = "Roboto"
+password_style = "random"
+polkit_agent = true
+time_format = "%I:%M %p"
+
+    [shell.panel]
+    open_near_click_control_center = true
+    transparency_mode = "soft"
+
+    [[shell.session.actions]]
+    action = "logout"
+    countdown_seconds = 0.0
+    enabled = true
+    shortcut = "1"
+    variant = "default"
+
+    [[shell.session.actions]]
+    action = "lock_and_suspend"
+    countdown_seconds = 0.0
+    enabled = true
+    label = "Suspend"
+    shortcut = "2"
+    variant = "default"
+
+    [[shell.session.actions]]
+    action = "reboot"
+    countdown_seconds = 0.0
+    enabled = true
+    shortcut = "3"
+    variant = "default"
+
+    [[shell.session.actions]]
+    action = "shutdown"
+    countdown_seconds = 0.0
+    enabled = true
+    shortcut = "4"
+    variant = "destructive"
+
+[theme]
+custom_palette = "MyPalette"
+source = "custom"
+
+[wallpaper]
+directory = "/home/zeon/Pictures/Wallpaper"
+
+    [wallpaper.default]
+    path = "/home/zeon/Pictures/Wallpaper/ahkanaa.png"
+
+    [wallpaper.last]
+    path = "/home/zeon/Pictures/Wallpaper/ahkanaa.png"
+
+    [wallpaper.monitors.DP-1]
+    path = "/home/zeon/Pictures/Wallpaper/ahkanaa.png"
+
+    [wallpaper.monitors.HDMI-A-1]
+    path = "/home/zeon/Pictures/Wallpaper/ahkanaa.png"
+
+[widget.clock]
+format = "%I:%M %p"
+
+[widget.media]
+title_scroll = "on_hover"
+
+[widget.sysmon]
+stat = "ram_used"
+
+[widget.workspaces]
+display = "name"
+max_label_chars = 10
