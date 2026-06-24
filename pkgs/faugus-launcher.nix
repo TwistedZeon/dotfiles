@@ -21,15 +21,15 @@ let
     owner = "Faugus";
     repo = "faugus-launcher";
 
-    rev = "1.21.1";
+    rev = "1.22.4";
 
-    hash = "sha256-ON3d0Kt+ZHp3+0SWDRGE5Z4gaVfh4+Y0XsJxfCXqkTs=";
+    hash = "sha256-Npfoqa6A1YSNSxV3zcIQL6prlht47dVaZYpq9+Dx9LY=";
   };
 in
 
 python3Packages.buildPythonApplication {
   pname = "faugus-launcher";
-  version = "1.21.1";
+  version = "1.22.4";
 
   inherit src;
   pyproject = false;
@@ -58,15 +58,10 @@ python3Packages.buildPythonApplication {
     substituteInPlace faugus-launcher \
       --replace-fail "/usr/bin/python3" "${python3Packages.python.interpreter}"
 
-    substituteInPlace faugus/launcher.py \
-      --replace-fail "PathManager.user_data('faugus-launcher/umu-run')" "'${lib.getExe umu-launcher}'" \
-      --replace-fail "/usr/lib/extensions/vulkan/lsfgvk/lib/liblsfg-vk.so" "${lsfg-vk}/lib/liblsfg-vk.so" \
-      --replace-fail "/usr/lib/liblsfg-vk.so" "${lsfg-vk}/lib/liblsfg-vk.so"
-
-    substituteInPlace faugus/runner.py \
+    substituteInPlace faugus/path_manager.py \
       --replace-fail "PathManager.user_data('faugus-launcher/umu-run')" "'${lib.getExe umu-launcher}'"
 
-    substituteInPlace faugus/shortcut.py \
+    substituteInPlace faugus/launcher.py faugus/shortcut.py \
       --replace-fail "/usr/lib/extensions/vulkan/lsfgvk/lib/liblsfg-vk.so" "${lsfg-vk}/lib/liblsfg-vk.so" \
       --replace-fail "/usr/lib/liblsfg-vk.so" "${lsfg-vk}/lib/liblsfg-vk.so"
   '';
