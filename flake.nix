@@ -11,13 +11,8 @@
     };
 
     noctalia-shell = {
-      url = "github:noctalia-dev/noctalia/legacy-v4";
+      url = "github:noctalia-dev/noctalia";
       inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    noctalia-plugins = {
-      url = "github:noctalia-dev/noctalia-plugins";
-      flake = false;
     };
 
     wrapper-modules.url = "github:BirdeeHub/nix-wrapper-modules";
