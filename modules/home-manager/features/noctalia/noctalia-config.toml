@@ -1,11 +1,11 @@
 [bar.default]
 background_opacity = 0.84999998100101948
 center = [ "media" ]
-end = [ "tray", "notifications", "clipboard", "volume", "brightness", "battery", "clock", "control-center", "session" ]
+end = [ "tray", "notifications", "clipboard", "volume", "brightness", "battery", "clock" ]
 margin_edge = 0
 margin_ends = 0
 radius = 0
-start = [ "launcher", "wallpaper", "workspaces", "cpu", "ram" ]
+start = [ "launcher", "workspaces", "cpu", "ram" ]
 
     [bar.default.monitor.HDMI-A-1]
     enabled = false
@@ -59,6 +59,9 @@ widget_order = [ "lockscreen-login-box@DP-1", "lockscreen-login-box@HDMI-A-1" ]
     output = "HDMI-A-1"
     rotation = 0.0
     type = "login_box"
+
+[osd.kinds]
+media = false
 
 [plugins]
 enabled = []
@@ -121,10 +124,16 @@ directory = "/home/zeon/Pictures/Wallpaper"
     [wallpaper.monitors.HDMI-A-1]
     path = "/home/zeon/Pictures/Wallpaper/ahkanaa.png"
 
+[widget.audio_visualizer]
+bands = 50
+color_1 = "secondary"
+width = 255.0
+
 [widget.clock]
 format = "%I:%M %p"
 
 [widget.media]
+max_length = 800
 title_scroll = "on_hover"
 
 [widget.sysmon]

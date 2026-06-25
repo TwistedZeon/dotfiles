@@ -11,7 +11,7 @@
     };
 
     noctalia = {
-      url = "github:noctalia-dev/noctalia";
+      url = "github:noctalia-dev/noctalia/cachix";
     };
 
     wrapper-modules.url = "github:BirdeeHub/nix-wrapper-modules";
