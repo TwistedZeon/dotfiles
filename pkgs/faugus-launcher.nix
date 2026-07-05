@@ -6,33 +6,27 @@
   lib,
   libayatana-appindicator,
   libcanberra-gtk3,
-  lsfg-vk,
   meson,
   ninja,
-  nix-update-script,
   python3Packages,
   umu-launcher,
+  lsfg-vk,
   wrapGAppsHook3,
   xdg-utils,
 }:
 
-let
+python3Packages.buildPythonApplication (finalAttrs: {
+  pname = "faugus-launcher";
+  # renovate: datasource=github-releases depName=Faugus/faugus-launcher
+  version = "1.22.7";
+  pyproject = false;
+
   src = fetchFromGitHub {
     owner = "Faugus";
     repo = "faugus-launcher";
-
-    rev = "1.22.4";
-
-    hash = "sha256-Npfoqa6A1YSNSxV3zcIQL6prlht47dVaZYpq9+Dx9LY=";
+    tag = finalAttrs.version;
+    hash = "sha256-Ki1Me/mh8zniCpjjFVl1Dv/svJ0ZgDKVOG1vmhoLxIo=";
   };
-in
-
-python3Packages.buildPythonApplication {
-  pname = "faugus-launcher";
-  version = "1.22.4";
-
-  inherit src;
-  pyproject = false;
 
   nativeBuildInputs = [
     gobject-introspection
@@ -48,7 +42,6 @@ python3Packages.buildPythonApplication {
   dependencies = with python3Packages; [
     pillow
     psutil
-    pygame
     pygobject3
     requests
     vdf
@@ -61,39 +54,52 @@ python3Packages.buildPythonApplication {
     substituteInPlace faugus/path_manager.py \
       --replace-fail "PathManager.user_data('faugus-launcher/umu-run')" "'${lib.getExe umu-launcher}'"
 
-    substituteInPlace faugus/launcher.py faugus/shortcut.py \
-      --replace-fail "/usr/lib/extensions/vulkan/lsfgvk/lib/liblsfg-vk.so" "${lsfg-vk}/lib/liblsfg-vk.so" \
-      --replace-fail "/usr/lib/liblsfg-vk.so" "${lsfg-vk}/lib/liblsfg-vk.so"
+    substituteInPlace faugus/path_manager.py \
+      --replace-fail 'next((p for p in _lsfgvk_candidates if p.exists()), _lsfgvk_candidates[-1])' 'Path("${lsfg-vk}/lib/liblsfg-vk.so")'
   '';
 
   dontWrapGApps = true;
 
-  preFixup = ''
-    makeWrapperArgs+=(
-      "''${gappsWrapperArgs[@]}"
-      --suffix PYTHONPATH : "$out/${python3Packages.python.sitePackages}:$PYTHONPATH"
-      --suffix PATH : "${
-        lib.makeBinPath [
-          icoextract
-          imagemagick
-          libcanberra-gtk3
-          umu-launcher
-          xdg-utils
-        ]
-      }"
-    )
+  preFixup =
+    let
+      pythonPath =
+        with python3Packages;
+        makePythonPath [
+          pillow
+          psutil
+          pygobject3
+          requests
+          vdf
+        ];
+    in
+    ''
+      # Wrap faugus-launcher manually
+      gappsWrapperArgs+=(
+        --prefix PYTHONPATH : "$out/${python3Packages.python.sitePackages}:${pythonPath}"
+        --suffix PATH : "${
+          lib.makeBinPath [
+            icoextract
+            imagemagick
+            libcanberra-gtk3
+            umu-launcher
+            xdg-utils
+          ]
+        }"
+      )
+      wrapProgram $out/bin/faugus-launcher "''${gappsWrapperArgs[@]}"
 
-    wrapProgram $out/bin/faugus-launcher ''${makeWrapperArgs[@]}
-  '';
-
-  passthru.updateScript = nix-update-script { };
+      # Set wrapper args for faugus-run
+      makeWrapperArgs+=(
+        "''${gappsWrapperArgs[@]}"
+      )
+    '';
 
   meta = {
     description = "Simple and lightweight app for running Windows games using UMU-Launcher";
     homepage = "https://github.com/Faugus/faugus-launcher";
+    changelog = "https://github.com/Faugus/faugus-launcher/releases/tag/${finalAttrs.src.tag}";
     license = lib.licenses.mit;
-    maintainers = with lib.maintainers; [ RoGreat ];
     mainProgram = "faugus-launcher";
     platforms = lib.platforms.linux;
   };
-}
+})

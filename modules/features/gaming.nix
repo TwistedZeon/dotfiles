@@ -25,7 +25,6 @@
           # ];
           extraPackages = with pkgs; [
             SDL2
-            # er-patcher
           ];
           protontricks.enable = true;
         };
@@ -33,23 +32,21 @@
 
       environment.systemPackages = with pkgs; [
         inputs.self.packages.${pkgs.stdenv.hostPlatform.system}.faugus-launcher
-        protonplus
         steam-run
         dxvk
         gamescope
         goverlay
         heroic
-        # er-patcher
-        # steamtinkerlaunch
         prismlauncher
         openttd
         ryubing
         pcsx2
         dolphin-emu
-        retroarch-free
         tochd
         r2modman
         scummvm
+        wineWow64Packages.staging
+        winetricks
       ];
       nixpkgs.overlays = [
         # Removes fast math which can cause inaccuracies and blurry output

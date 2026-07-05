@@ -538,6 +538,13 @@
               open-on-workspace = "Gaming";
             }
             {
+              matches = [ { title = "PlayOnline Viewer Ver.1.18.15e"; } ];
+              open-maximized-to-edges = false;
+              open-maximized = false;
+              open-floating = true;
+              open-on-workspace = "Gaming";
+            }
+            {
               matches = [ { app-id = "org.prismlauncher.PrismLauncher"; } ];
               open-on-workspace = "Gaming";
             }

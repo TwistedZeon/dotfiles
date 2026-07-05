@@ -70,7 +70,7 @@ enabled = []
 font_family = "Roboto"
 password_style = "random"
 polkit_agent = true
-time_format = "%I:%M %p"
+time_format = "%-I:%M %p"
 
     [shell.panel]
     open_near_click_control_center = true
@@ -129,8 +129,11 @@ bands = 50
 color_1 = "secondary"
 width = 255.0
 
+[widget.battery]
+device = "/org/freedesktop/UPower/devices/battery_ps_controller_battery_a4oaeo12ob0o55o26"
+
 [widget.clock]
-format = "%I:%M %p"
+format = "%-I:%M %p"
 
 [widget.media]
 max_length = 800

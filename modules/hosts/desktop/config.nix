@@ -90,7 +90,7 @@
       nix.gc = {
         automatic = true;
         dates = "weekly";
-        options = "--delete-older-tan 30d";
+        options = "--delete-older-than 30d";
       };
 
       # Xbox controller driver.
