@@ -14,6 +14,11 @@
       url = "github:noctalia-dev/noctalia/cachix";
     };
 
+    noctalia-greeter = {
+      url = "github:noctalia-dev/noctalia-greeter";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     wrapper-modules.url = "github:BirdeeHub/nix-wrapper-modules";
 
     niri-float-sticky = {

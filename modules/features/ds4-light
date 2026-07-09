@@ -1,0 +1,20 @@
+#!/run/current-system/sw/bin/bash
+
+for i in {1..20}; do
+    if ls /sys/class/leds/*:red >/dev/null 2>&1; then
+        break
+    fi
+    sleep 0.1
+done
+
+for color in red green blue; do
+    for led in /sys/class/leds/*:$color; do
+        [ -e "$led/brightness" ] || continue
+
+        case "$color" in
+            red)   echo 10 > "$led/brightness" ;;
+            green) echo 0 > "$led/brightness" ;;
+            blue)  echo 0 > "$led/brightness" ;;
+        esac
+    done
+done

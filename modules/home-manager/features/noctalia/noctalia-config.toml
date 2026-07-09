@@ -67,6 +67,7 @@ media = false
 enabled = []
 
 [shell]
+avatar_path = "/home/zeon/Pictures/Wallpaper/photoahkana.png"
 font_family = "Roboto"
 password_style = "random"
 polkit_agent = true
@@ -78,14 +79,14 @@ time_format = "%-I:%M %p"
 
     [[shell.session.actions]]
     action = "logout"
-    countdown_seconds = 0.0
+    countdown_seconds = 10.0
     enabled = true
     shortcut = "1"
     variant = "default"
 
     [[shell.session.actions]]
     action = "lock_and_suspend"
-    countdown_seconds = 0.0
+    countdown_seconds = 10.0
     enabled = true
     label = "Suspend"
     shortcut = "2"
@@ -93,14 +94,14 @@ time_format = "%-I:%M %p"
 
     [[shell.session.actions]]
     action = "reboot"
-    countdown_seconds = 0.0
+    countdown_seconds = 10.0
     enabled = true
     shortcut = "3"
     variant = "default"
 
     [[shell.session.actions]]
     action = "shutdown"
-    countdown_seconds = 0.0
+    countdown_seconds = 10.0
     enabled = true
     shortcut = "4"
     variant = "destructive"

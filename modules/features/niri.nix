@@ -11,6 +11,9 @@
       ...
     }:
     {
+      imports = [
+        inputs.noctalia-greeter.nixosModules.default
+      ];
       programs.niri = {
         enable = true;
         package = self.packages.${pkgs.stdenv.hostPlatform.system}.myNiri;
@@ -77,26 +80,19 @@
         gtk-icon-theme-name=Adwaita
       '';
       # Display Manager
-      services.displayManager.ly = {
+      programs.noctalia-greeter = {
         enable = true;
+        # Optional configuration
+        greeter-args = "";
         settings = {
-          numlock = true;
-          save = true;
-          text_in_center = true;
-          hide_version_string = true;
-          # animation = "matrix";
-          #bigclock = false;
-          # --- Color Settings (0xAARRGGBB) ---
-          # Background color of dialog box (Black)
-          bg = "0x00000000";
-          # Foreground text color (White: #FFFFFF)
-          fg = "0x00FFFFFF";
-          # Border color (Red: #FF0000)
-          border_fg = "0x00DB4343";
-          # Error message color (Red)
-          error_fg = "0x00FF0000";
-          # Clock color (Purple: #800080)
-          # clock_color = "#800080";
+          cursor = {
+            theme = "Posy_Cursor";
+            size = 24;
+            path = "${pkgs.posy-cursors}/share/icons";
+          };
+          keyboard = {
+            layout = "us";
+          };
         };
       };
       # This is so the main monitor TTY ly isn't cropped

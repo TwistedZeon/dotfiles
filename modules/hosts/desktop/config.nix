@@ -29,6 +29,7 @@
         self.nixosModules.git
         self.nixosModules.pipewire
         self.nixosModules.gaming
+        self.nixosModules.openrgb
         self.nixosModules.communication
       ];
 
@@ -105,13 +106,26 @@
         # Disable DS4 touchpad acting as mouse
         ATTRS{name}=="Wireless Controller Touchpad", ENV{LIBINPUT_IGNORE_DEVICE}="1"
         ATTRS{name}=="Sony Interactive Entertainment Wireless Controller Touchpad", ENV{LIBINPUT_IGNORE_DEVICE}="1"
+
+        # Changes DS4 light to dim red
+        ACTION=="add", SUBSYSTEM=="hid", ENV{HID_ID}=="0005:0000054C:000009CC", TAG+="systemd", ENV{SYSTEMD_WANTS}+="ds4-light.service"
       '';
+
+      # DS4 Light Script
+      systemd.services.ds4-light = {
+        serviceConfig = {
+          Type = "oneshot";
+          ExecStart = "${pkgs.bash}/bin/bash ${../../features/ds4-light}";
+        };
+      };
 
       # NFS
       boot.supportedFilesystems = [ "nfs" ];
 
       # Enable plymouth # Enables logo animation when booting
-      boot.plymouth.enable = true;
+      # boot.plymouth.enable = true;
+
+      services.accounts-daemon.enable = true;
 
       # Bootloader.
       # boot.loader.systemd-boot.enable = true;
@@ -211,9 +225,15 @@
           name = "nwhich";
           text = /* sh */ ''readlink -f "$(which "$1")"'';
         })
+        # Copy Noctalia's settings to git files
         (writeShellApplication {
           name = "noctalia-copy";
           text = /* sh */ "noctalia config export > ~/nixos/modules/home-manager/features/noctalia/noctalia-config.toml";
+        })
+        # Line-in loopback
+        (writeShellApplication {
+          name = "line-loop";
+          text = /* sh */ "pw-loopback --capture alsa_input.pci-0000_0d_00.4.analog-stereo";
         })
 
         #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by   default.
