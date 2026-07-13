@@ -213,12 +213,13 @@
         libreoffice
         pwvucontrol
         feishin
-        handbrake
+        # handbrake
         picard
         rsgain
         virt-viewer
         cifs-utils
         gparted-full
+        unar
 
         # Improved which for nix
         (writeShellApplication {

@@ -10,6 +10,9 @@ start = [ "launcher", "workspaces", "cpu", "ram" ]
     [bar.default.monitor.HDMI-A-1]
     enabled = false
 
+[brightness]
+enable_ddcutil = true
+
 [desktop_widgets]
 schema_version = 2
 widget_order = []
@@ -132,6 +135,11 @@ width = 255.0
 
 [widget.battery]
 device = "/org/freedesktop/UPower/devices/battery_ps_controller_battery_a4oaeo12ob0o55o26"
+
+[widget.cat]
+audio_spectrum = true
+tappy_mode = true
+type = "noctalia/bongocat:cat"
 
 [widget.clock]
 format = "%-I:%M %p"

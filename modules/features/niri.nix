@@ -34,6 +34,7 @@
         biome
         adwaita-icon-theme
         killall
+        ddcutil
         inputs.niri-float-sticky.packages.${stdenv.hostPlatform.system}.default
         inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
       ];
@@ -128,7 +129,6 @@
     {
       pkgs,
       lib,
-      self',
       ...
     }:
     {
@@ -538,6 +538,12 @@
               open-maximized-to-edges = false;
               open-maximized = false;
               open-floating = true;
+              open-on-workspace = "Gaming";
+            }
+            {
+              matches = [ { app-id = "steam_app_893180"; } ];
+              open-maximized-to-edges = true;
+              open-maximized = true;
               open-on-workspace = "Gaming";
             }
             {
