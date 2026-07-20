@@ -151,6 +151,9 @@
               };
               focus-at-startup = _: {
               };
+              hot-corners = {
+                off = _: { };
+              };
             };
             "HDMI-A-1" = {
               mode = "1440x900@74.984";
@@ -162,9 +165,9 @@
                   y = 50;
                 };
               };
-            };
-            hot-corners = {
-              off = _: { };
+              hot-corners = {
+                off = _: { };
+              };
             };
           };
 

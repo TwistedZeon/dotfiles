@@ -75,7 +75,25 @@
 
       programs.nix-ld = {
         enable = true;
-        libraries = pkgs.steam-run.args.multiPkgs pkgs;
+        libraries =
+          (pkgs.steam-run.args.multiPkgs pkgs)
+          ++ (with pkgs; [
+            icu
+            libX11
+            libICE
+            libSM
+            libXi
+            libXrandr
+            libXrender
+            libXcursor
+            libXext
+            libXfixes
+            libXinerama
+            libxcb
+            libGL
+            fontconfig
+            gtk3
+          ]);
       };
 
       # services.ananicy = {
