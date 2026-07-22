@@ -35,6 +35,7 @@
         adwaita-icon-theme
         killall
         ddcutil
+        gpu-screen-recorder
         inputs.niri-float-sticky.packages.${stdenv.hostPlatform.system}.default
         inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
       ];

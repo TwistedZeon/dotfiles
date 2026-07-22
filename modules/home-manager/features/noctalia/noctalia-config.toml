@@ -1,6 +1,6 @@
 [bar.default]
 background_opacity = 0.84999998100101948
-center = [ "media" ]
+center = [ "Media", "recorder" ]
 end = [ "tray", "notifications", "clipboard", "volume", "brightness", "battery", "clock" ]
 margin_edge = 0
 margin_ends = 0
@@ -9,6 +9,14 @@ start = [ "launcher", "workspaces", "cpu", "ram" ]
 
     [bar.default.monitor.HDMI-A-1]
     enabled = false
+
+    [[bar.default.capsule_group]]
+    enabled = true
+    fill = "surface_variant"
+    id = "g1"
+    members = [ "notifications", "clipboard", "volume", "brightness", "battery", "clock" ]
+    opacity = 1.0
+    padding = 6.0
 
 [brightness]
 enable_ddcutil = true
@@ -67,7 +75,7 @@ widget_order = [ "lockscreen-login-box@DP-1", "lockscreen-login-box@HDMI-A-1" ]
 media = false
 
 [plugins]
-enabled = []
+enabled = [ "noctalia/screen_recorder" ]
 
 [shell]
 avatar_path = "/home/zeon/Pictures/Wallpaper/photoahkana.png"
@@ -128,6 +136,14 @@ directory = "/home/zeon/Pictures/Wallpaper"
     [wallpaper.monitors.HDMI-A-1]
     path = "/home/zeon/Pictures/Wallpaper/ahkanaa.png"
 
+[widget.Media]
+capsule = true
+capsule_fill = "on_secondary"
+capsule_padding = 12
+command = "noctalia msg panel-toggle control-center media"
+glyph = "music"
+type = "custom_button"
+
 [widget.audio_visualizer]
 bands = 50
 color_1 = "secondary"
@@ -145,12 +161,25 @@ type = "noctalia/bongocat:cat"
 format = "%-I:%M %p"
 
 [widget.media]
+album_art_only = true
 max_length = 800
 title_scroll = "on_hover"
+
+[widget.recorder]
+capsule = true
+capsule_fill = "on_secondary"
+capsule_padding = 12
+type = "noctalia/screen_recorder:recorder"
 
 [widget.sysmon]
 stat = "ram_used"
 
+[widget.taskbar]
+show_window_title = true
+
 [widget.workspaces]
+capsule = true
 display = "name"
 max_label_chars = 10
+occupied_color = "on_primary"
+style = "minimal"

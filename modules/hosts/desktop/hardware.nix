@@ -29,7 +29,11 @@
         "hid-playstation"
       ];
       boot.kernelParams = [
-        "pcie_aspm=off"
+        # Limit ZFS dirty data to 512MB (prevents massive I/O spikes)
+        "zfs.zfs_dirty_data_max=536870912"
+
+        # Start flushing to disk sooner (at 64MB) to keep I/O consistent
+        "zfs.zfs_dirty_data_sync_percent=10"
       ];
       boot.extraModulePackages = [ ];
 
