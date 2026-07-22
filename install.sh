@@ -200,12 +200,12 @@ fi
 sudo mount --mkdir -t zfs zroot/persist /mnt/persist
 
 # get repo to install from
-read -rp "Enter flake URL (default: github:iynaix/dotfiles): " repo
-repo="${repo:-github:iynaix/dotfiles}"
+read -rp "Enter flake URL (default: github:TwistedZeon/dotfiles): " repo
+repo="${repo:-github:TwistedZeon/dotfiles}"
 
-# only relevant for IynaixOS
-if [[ $repo == "github:iynaix/dotfiles" ]]; then
-    hosts=("desktop" "framework" "xps" "vm" "vm-hyprland")
+# only relevant for ZeonOS
+if [[ $repo == "github:TwistedZeon/dotfiles" ]]; then
+    hosts=("desktop" "vm")
 
     echo "Available hosts:"
     for i in "${!hosts[@]}"; do
@@ -223,26 +223,26 @@ if [[ $repo == "github:iynaix/dotfiles" ]]; then
         fi
     done
 else
-    # non IynaixOS, prompt for host
+    # non ZeonOS, prompt for host
     read -rp "Which host to install?" host
 fi
 
 read -rp "Enter git rev for flake (default: main): " git_rev
 
 echo "Installing NixOS"
-if [[ $repo == "github:iynaix/dotfiles" ]]; then
+if [[ $repo == "github:TwistedZeon/dotfiles" ]]; then
     # root password is irrelevant if initialPassword is set in the config
     sudo nixos-install --no-root-password --flake "$repo/${git_rev:-main}#$host" --option tarball-ttl 0
 else
     sudo nixos-install --flake "$repo/${git_rev:-main}#$host" --option tarball-ttl 0
 fi
 
-# only relevant for IynaixOS
-if [[ $repo == "github:iynaix/dotfiles" ]]; then
-    echo "To setup secrets, run \"install-remote-secrets\" on the other host."
-
-    IP_ADDR=$(ifconfig | awk '/inet / && !/127.0.0.1/ {print $2; exit}')
-    echo "The IP address of this host is $IP_ADDR"
-fi
+# only relevant for ZeonOS
+# if [[ $repo == "github:TwistedZeon/dotfiles" ]]; then
+#     echo "To setup secrets, run \"install-remote-secrets\" on the other host."
+#
+#     IP_ADDR=$(ifconfig | awk '/inet / && !/127.0.0.1/ {print $2; exit}')
+#     echo "The IP address of this host is $IP_ADDR"
+# fi
 
 echo "Installation complete. It is now safe to reboot."

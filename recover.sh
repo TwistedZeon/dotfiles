@@ -48,12 +48,12 @@ sudo mount --mkdir -t zfs zroot/persist /mnt/persist
 sudo mount --mkdir -t zfs zroot/cache /mnt/cache
 
 # Get repo to install from
-read -rp "Enter flake URL (default: github:iynaix/dotfiles): " repo
-repo="${repo:-github:iynaix/dotfiles}"
+read -rp "Enter flake URL (default: github:TwistedZeon/dotfiles): " repo
+repo="${repo:-github:TwistedZeon/dotfiles}"
 
 # qol for iynaix os
-if [[ $repo == "github:iynaix/dotfiles" ]]; then
-    hosts=("desktop" "framework" "xps" "vm" "vm-hyprland")
+if [[ $repo == "github:TwistedZeon/dotfiles" ]]; then
+    hosts=("desktop" "vm")
 
     echo "Available hosts:"
     for i in "${!hosts[@]}"; do
@@ -78,7 +78,7 @@ fi
 read -rp "Enter git rev for flake (default: main): " git_rev
 
 echo "Re-installing NixOS"
-if [[ $repo == "github:iynaix/dotfiles" ]]; then
+if [[ $repo == "github:TwistedZeon/dotfiles" ]]; then
     # root password is irrelevant if initialPassword is set in the config
     sudo nixos-install --no-root-password --flake "$repo/${git_rev:-main}#$host" --option tarball-ttl 0
 else
