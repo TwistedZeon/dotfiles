@@ -8,12 +8,20 @@
       config,
       lib,
       modulesPath,
+      pkgs,
       ...
     }:
     {
       imports = [
         (modulesPath + "/installer/scan/not-detected.nix")
       ];
+
+      boot = {
+        kernelPackages =
+          assert lib.assertMsg (lib.versionOlder pkgs.zfs_unstable.version "2.4.4")
+            "zfs patch for kernel is no longer needed";
+          pkgs.linuxPackages_xanmod_latest;
+      };
 
       boot.initrd.availableKernelModules = [
         "nvme"
