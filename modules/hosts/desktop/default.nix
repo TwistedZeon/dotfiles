@@ -1,20 +1,14 @@
 {
-  self,
-  inputs,
-  ...
+    self,
+    inputs,
+    ...
 }:
 {
-  flake.nixosConfigurations.desktop = inputs.nixpkgs-patcher.lib.nixosSystem {
-    pkgs = import inputs.nixpkgs {
-      system = "x86_64-linux";
-      config = {
-        allowUnfree = true;
-      };
+    flake.nixosConfigurations.desktop = inputs.nixpkgs-patcher.lib.nixosSystem {
+        modules = [
+            self.nixosModules.desktopConfiguration
+            { nixpkgs.config.allowUnfree = true; }
+        ];
+        specialArgs = inputs;
     };
-
-    modules = [
-      self.nixosModules.desktopConfiguration
-    ];
-    specialArgs = inputs;
-  };
 }

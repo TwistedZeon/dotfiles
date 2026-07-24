@@ -5,12 +5,14 @@
   flake.nixosModules.zfs =
     {
       config,
+      pkgs,
       ...
     }:
     {
       boot = {
         supportedFilesystems.zfs = true;
         zfs = {
+          package = pkgs.zfs_unstable;
           forceImportRoot = false;
           devNodes =
             if config.hardware.cpu.intel.updateMicrocode then "/dev/disk/by-id" else "/dev/disk/by-partuuid";
