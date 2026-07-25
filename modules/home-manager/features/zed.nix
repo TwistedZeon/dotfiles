@@ -11,8 +11,8 @@
       ];
       userSettings = {
         theme = {
-          mode = "light";
-          dark = "One Dark";
+          mode = "dark";
+          dark = "Gruvbox Dark";
           light = "One Light";
         };
         hour_format = "hour12";
