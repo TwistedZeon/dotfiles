@@ -16,6 +16,9 @@
         themeLinks = [
           "https://raw.codeberg.page/AllPurposeMat/Disblock-Origin/DisblockOrigin.theme.css"
         ];
+        enabledThemes = [
+          "discord-system24.css"
+        ];
 
         plugins = {
           ClearURLs.enabled = true;
@@ -85,5 +88,7 @@
         '';
       };
     };
+    home.file.".config/vesktop/themes/discord-system24.css".source =
+      ./discord-system24.css;
   };
 }
