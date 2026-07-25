@@ -1,22 +1,43 @@
-[bar.default]
-background_opacity = 0.84999998100101948
-center = [ "Media", "recorder" ]
-end = [ "tray", "notifications", "clipboard", "volume", "brightness", "battery", "clock" ]
-margin_edge = 0
-margin_ends = 0
-radius = 0
-start = [ "launcher", "workspaces", "cpu", "ram" ]
+[bar]
+order = [ "default", "Bottom" ]
 
-    [bar.default.monitor.HDMI-A-1]
-    enabled = false
-
-    [[bar.default.capsule_group]]
+    [bar.Bottom]
+    background_opacity = 0.84999998100101948
+    capsule_radius = 3
+    center = []
+    concave_edge_corners = false
     enabled = true
-    fill = "surface_variant"
-    id = "g1"
-    members = [ "notifications", "clipboard", "volume", "brightness", "battery", "clock" ]
-    opacity = 1.0
-    padding = 6.0
+    end = [ "cpu", "ram" ]
+    margin_ends = 0
+    position = "bottom"
+    radius = 0
+    shadow = false
+    start = [ "taskbar" ]
+
+        [bar.Bottom.monitor.HDMI-A-1]
+        enabled = false
+
+    [bar.default]
+    background_opacity = 0.84999998100101948
+    capsule_radius = 3
+    center = [ "Media", "recorder" ]
+    end = [ "tray", "notifications", "clipboard", "volume", "brightness", "battery", "clock" ]
+    margin_edge = 0
+    margin_ends = 0
+    radius = 0
+    shadow = false
+    start = [ "launcher", "workspaces" ]
+
+        [bar.default.monitor.HDMI-A-1]
+        enabled = false
+
+        [[bar.default.capsule_group]]
+        enabled = true
+        fill = "surface_variant"
+        id = "g1"
+        members = [ "notifications", "clipboard", "volume", "brightness", "battery", "clock" ]
+        opacity = 1.0
+        padding = 6.0
 
 [brightness]
 enable_ddcutil = true
@@ -34,7 +55,7 @@ widget_order = []
 
 [dock]
 auto_hide = true
-enabled = true
+enabled = false
 reserve_space = false
 
 [idle]
@@ -79,13 +100,19 @@ enabled = [ "noctalia/screen_recorder" ]
 
 [shell]
 avatar_path = "/home/zeon/Pictures/Wallpaper/photoahkana.png"
+corner_radius_scale = 0.2500000037252903
 font_family = "Roboto"
 password_style = "random"
 polkit_agent = true
 time_format = "%-I:%M %p"
 
+    [shell.animation]
+    enabled = false
+
     [shell.panel]
+    control_center_placement = "floating"
     open_near_click_control_center = true
+    shadow = false
     transparency_mode = "soft"
 
     [[shell.session.actions]]
@@ -175,7 +202,10 @@ type = "noctalia/screen_recorder:recorder"
 stat = "ram_used"
 
 [widget.taskbar]
+pinned = [ "nemo" ]
+show_all_outputs = true
 show_window_title = true
+workspace_group_capsule = false
 
 [widget.workspaces]
 capsule = true

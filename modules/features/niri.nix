@@ -213,17 +213,27 @@
 
           layout = {
             focus-ring = {
-              width = 3;
-              active-color = "#DB4343";
-              inactive-color = "#505050";
-              urgent-color = "#9b0000";
-              # active-gradient from="#80c8ff" to="#bbddff" angle=45
-              # inactive-gradient from="#505050" to="#808080" angle=45 relative-to="workspace-view"
-              # urgent-gradient from="#800" to="#a33" angle=45
+                width = 0;
+                active-color = "#DB4343";
+                inactive-color = "#505050";
+                urgent-color = "#9b0000";
+                # active-gradient from="#ffbb66" to="#ffc880" angle=45 relative-to="workspace-view"
+                # inactive-gradient from="#505050" to="#808080" angle=45 relative-to="workspace-view" in="srgb-linear"
+                # urgent-gradient from="#800" to="#a33" angle=45
             };
+            border = {
+                width = 1;
+                active-color = "#DB4343";
+                inactive-color = "#505050";
+                urgent-color = "#9b0000";
+                # active-gradient from="#ffbb66" to="#ffc880" angle=45 relative-to="workspace-view"
+                # inactive-gradient from="#505050" to="#808080" angle=45 relative-to="workspace-view" in="srgb-linear"
+                # urgent-gradient from="#800" to="#a33" angle=45
+            };
+            gaps = 0;
           };
 
-          layout.gaps = 6;
+          prefer-no-csd = _: { };
 
           hotkey-overlay = {
             # Avoid auto-showing the important hotkeys menu.
@@ -532,7 +542,7 @@
               block-out-from = "screencast";
             }
             {
-              matches = [ { app-id = "faugus-launcher"; } ];
+              matches = [ { app-id = "io.github.Faugus.faugus-launcher"; } ];
               open-maximized-to-edges = false;
               open-maximized = true;
               open-on-workspace = "Gaming";
@@ -565,6 +575,11 @@
               open-maximized = true;
             }
             {
+              matches = [ { app-id = "dev.zed.Zed"; } ];
+              open-maximized-to-edges = false;
+              open-maximized = true;
+            }
+            {
               matches = [ { app-id = "nemo"; } ];
               open-maximized-to-edges = false;
               open-maximized = false;
@@ -586,9 +601,9 @@
               open-floating = true;
             }
             {
-              geometry-corner-radius = 5;
+              geometry-corner-radius = 0;
               draw-border-with-background = false;
-              clip-to-geometry = true;
+              clip-to-geometry = false;
             }
           ];
         };

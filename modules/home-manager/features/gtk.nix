@@ -32,5 +32,12 @@
           color-scheme = "prefer-light";
         };
       };
+      home.file.".config/gtk-4.0/gtk.css".text = ''
+        window,
+        window.background,
+        .background {
+          border-radius: 0;
+        }
+      '';
     };
 }
