@@ -52,6 +52,10 @@
             events = true;
             showAllChannels = true;
           };
+          IgnoreActivities = {
+            enabled = true;
+            ignorePlaying = true;
+          };
           NoProfileThemes.enabled = true;
           NotificationVolume.enabled = true;
           OpenInApp = {
