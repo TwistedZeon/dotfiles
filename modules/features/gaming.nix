@@ -33,6 +33,7 @@
       environment.systemPackages = with pkgs; [
         inputs.self.packages.${pkgs.stdenv.hostPlatform.system}.faugus-launcher
         inputs.self.packages.${pkgs.stdenv.hostPlatform.system}.udpfsd
+        inputs.self.packages.${pkgs.stdenv.hostPlatform.system}.ps3netsrv
         steam-run
         dxvk
         gamescope

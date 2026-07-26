@@ -20,6 +20,8 @@
 
         ps2 = "udpfsd -fsroot /mnt/4TB/PS2 -bind 192.168.0.129:62967 -port 62966 -verbose";
 
+        ps3 = "ps3netsrv /mnt/Linux-Extra/PS3";
+
         dockerssh = "ssh root@192.168.0.194";
       };
       functions.fish_prompt = {
