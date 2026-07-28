@@ -284,6 +284,9 @@
 
       # Open ports in the firewall.
       # networking.firewall.allowedTCPPorts = [ ... ];
+      networking.firewall.allowedTCPPorts = [
+        38008
+      ];
       networking.firewall.allowedTCPPortRanges = [
         {
           from = 1714;
