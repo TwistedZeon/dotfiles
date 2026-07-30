@@ -20,9 +20,9 @@
           enable = true;
           remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
           dedicatedServer.openFirewall = true; # Open ports for Source Dedicated Server hosting
-          # extraCompatPackages = with pkgs; [
-          #   proton-ge-bin
-          # ];
+          extraCompatPackages = with pkgs; [
+            inputs.self.packages.${pkgs.stdenv.hostPlatform.system}.proton-ge-bin
+          ];
           extraPackages = with pkgs; [
             SDL2
           ];
