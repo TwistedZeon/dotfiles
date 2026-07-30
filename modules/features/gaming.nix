@@ -23,6 +23,12 @@
           extraCompatPackages = with pkgs; [
             inputs.self.packages.${pkgs.stdenv.hostPlatform.system}.proton-ge-bin
           ];
+          package = pkgs.steam.override {
+            extraProfile = ''
+              export DXVK_HUD=0
+              export MANGOHUD=1
+            '';
+          };
           extraPackages = with pkgs; [
             SDL2
           ];
