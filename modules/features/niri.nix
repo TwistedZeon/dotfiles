@@ -555,12 +555,6 @@
               open-on-workspace = "Gaming";
             }
             {
-              matches = [ { app-id = "steam_app_893180"; } ];
-              open-maximized-to-edges = true;
-              open-maximized = true;
-              open-on-workspace = "Gaming";
-            }
-            {
               matches = [ { app-id = "org.prismlauncher.PrismLauncher"; } ];
               open-on-workspace = "Gaming";
             }
@@ -599,6 +593,22 @@
               open-maximized-to-edges = false;
               open-maximized = false;
               open-floating = true;
+            }
+            # Games
+            {
+              matches = [ { app-id = "tokyoxtremeracer-win64-shipping.exe"; } ];
+              open-on-workspace = "Gaming";
+              variable-refresh-rate = true;
+            }
+            {
+              matches = [ { app-id = "steam_app_427190"; } ]; # Dead Rising
+              open-on-workspace = "Gaming";
+              variable-refresh-rate = true;
+            }
+            {
+              matches = [ { app-id = "steam_app_381210"; } ]; # Dead by Daylight
+              open-on-workspace = "Gaming";
+              variable-refresh-rate = true;
             }
             {
               geometry-corner-radius = 0;
