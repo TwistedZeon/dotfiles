@@ -34,6 +34,9 @@
               path_lookup = true;
             };
           };
+          clangd = {
+            binary.path_lookup = true;
+          };
         };
         languages = {
           "Nix" = {
@@ -55,6 +58,13 @@
               ];
               command = "biome";
             };
+          };
+          "C++" = {
+            language_servers = [ "clangd" ];
+          };
+
+          "C" = {
+            language_servers = [ "clangd" ];
           };
         };
       };
