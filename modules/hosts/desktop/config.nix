@@ -78,6 +78,7 @@
         libraries =
           (pkgs.steam-run.args.multiPkgs pkgs)
           ++ (with pkgs; [
+            qt6.qtbase
             icu
             libX11
             libICE
