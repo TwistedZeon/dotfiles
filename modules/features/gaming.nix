@@ -49,6 +49,7 @@
         openttd
         ryubing
         pcsx2
+        ppsspp
         dolphin-emu
         tochd
         r2modman
