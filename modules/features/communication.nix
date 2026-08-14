@@ -8,11 +8,14 @@
       ...
     }:
     {
-      environment.systemPackages = [
-        pkgs.arrpc
-        pkgs.mumble
-        pkgs.thunderbird
+      environment.systemPackages = with pkgs; [
+        arrpc
+        mumble
+        thunderbird
+        element-desktop
       ];
-      systemd.packages = [ pkgs.arrpc ];
+      systemd.packages = with pkgs; [
+        arrpc
+     ];
     };
 }
