@@ -64,10 +64,6 @@
             # https://github.com/ValveSoftware/gamescope/issues/1924#issuecomment-3725667842
             NIX_CFLAGS_COMPILE = [ "-fno-fast-math" ];
           });
-          # Use older ffmpeg until it's fixed
-          pcsx2 = prev.pcsx2.override {
-            ffmpeg = prev.ffmpeg_8;
-          };
         })
       ];
     };
