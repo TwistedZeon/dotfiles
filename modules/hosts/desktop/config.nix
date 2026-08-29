@@ -239,6 +239,8 @@
         cifs-utils
         gparted-full
         unar
+        samba
+        plex-desktop
 
         # Improved which for nix
         (writeShellApplication {
@@ -264,9 +266,6 @@
         enable = true;
 
         settings.patches = [
-          # build zfs for linux 7.1, no issues according to a core dev
-          # https://github.com/openzfs/zfs/issues/18760#issuecomment-4919127088
-          ./../../patches/zfs_unstable-linux-7_1.patch
         ];
       };
 

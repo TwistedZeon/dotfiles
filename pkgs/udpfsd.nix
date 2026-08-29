@@ -8,16 +8,16 @@
 
 buildGoModule {
   pname = "udpfsd";
-  version = "0.1.6";
+  version = "0.1.7";
 
   src = fetchFromGitHub {
     owner = "pcm720";
     repo = "udpfsd";
-    rev = "v0.1.6";
-    hash = "sha256-QUnMNqQFGZXcRgIqn3iT56UTdnrpbva0X02L11bUKOE=";
+    rev = "v0.1.7";
+    hash = "sha256-z0WaZFvK6SQq626mGVe2EggoY2wowqZiEsShgN5hLbo=";
   };
 
-  vendorHash = "sha256-w1ZvVk06PwBZryCliRvoWMXwShQNnqMTJJZvEZMgRlQ=";
+  vendorHash = "sha256-0NjdihN5+EB7LBtBZKh1+725CjQCuLJ9KRECm0Md2jA=";
 
   nativeBuildInputs = [
     pkg-config
