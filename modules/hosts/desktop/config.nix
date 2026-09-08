@@ -241,6 +241,7 @@
         unar
         samba
         plex-desktop
+        jellyfin-mpv-shim
 
         # Improved which for nix
         (writeShellApplication {
