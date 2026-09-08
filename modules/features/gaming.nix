@@ -56,6 +56,7 @@
         scummvm
         wineWow64Packages.staging
         winetricks
+        openmw
       ];
       nixpkgs.overlays = [
         # Removes fast math which can cause inaccuracies and blurry output
