@@ -597,6 +597,11 @@
             }
             # Games
             {
+              matches = [ { title = "Resident Evil 4"; } ];
+              open-on-workspace = "Gaming";
+              variable-refresh-rate = true;
+            }
+            {
               matches = [ { app-id = "tokyoxtremeracer-win64-shipping.exe"; } ];
               open-on-workspace = "Gaming";
               variable-refresh-rate = true;
