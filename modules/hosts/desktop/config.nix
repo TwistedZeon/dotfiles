@@ -25,6 +25,7 @@
         self.nixosModules.defaults
         # self.nixosModules.gnome
         self.nixosModules.niri
+        self.nixosModules.umbriel
         # self.nixosModules.zen-browser
         self.nixosModules.git
         self.nixosModules.pipewire

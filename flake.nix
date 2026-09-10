@@ -27,6 +27,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    umbriel = {
+      url = "git+https://github.com/noctalia-dev/umbriel";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     # zen-browser = {
     #   url = "github:youwen5/zen-browser-flake";
     #   inputs.nixpkgs.follows = "nixpkgs";

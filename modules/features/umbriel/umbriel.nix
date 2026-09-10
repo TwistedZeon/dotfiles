@@ -7,6 +7,6 @@
       ...
     }:
     {
-      programs.umbriel.enable = false;
+      programs.umbriel.enable = true;
     };
 }

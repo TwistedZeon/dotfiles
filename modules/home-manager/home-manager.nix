@@ -37,6 +37,8 @@
             self.homeModules.firefox
             inputs.noctalia.homeModules.default
             self.homeModules.noctalia
+            inputs.umbriel.homeModules.default
+            self.homeModules.umbriel
           ];
 
           home.stateVersion = "25.11";
