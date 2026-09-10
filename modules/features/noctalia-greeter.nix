@@ -20,6 +20,7 @@
           };
           keyboard = {
             layout = "us";
+            numlock = true;
           };
         };
       };
