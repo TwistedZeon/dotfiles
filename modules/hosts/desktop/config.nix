@@ -30,6 +30,7 @@
         self.nixosModules.pipewire
         self.nixosModules.gaming
         self.nixosModules.openrgb
+        self.nixosModules.overlays
         self.nixosModules.communication
       ];
 
