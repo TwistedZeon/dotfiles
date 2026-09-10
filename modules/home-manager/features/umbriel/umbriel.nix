@@ -13,6 +13,12 @@
           general.autostart = [ "noctalia" ];
           layout.gap = 0;
           input.keyboard.layout = "us";
+          input.mouse = {
+            accel_profile = "flat";
+          };
+          input.cursor = {
+            theme = "Posy_Cursor";
+          };
           output.DP-1 = {
                mode = "1920x1080@143.980";
                position = [ 0 0 ];
