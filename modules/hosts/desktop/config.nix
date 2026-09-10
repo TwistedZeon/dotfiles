@@ -32,6 +32,7 @@
         self.nixosModules.gaming
         self.nixosModules.openrgb
         self.nixosModules.overlays
+        self.nixosModules.noctalia-greeter
         self.nixosModules.communication
       ];
 

@@ -82,28 +82,6 @@
         [Settings]
         gtk-icon-theme-name=Adwaita
       '';
-      # Display Manager
-      programs.noctalia-greeter = {
-        enable = true;
-        # Optional configuration
-        greeter-args = "";
-        settings = {
-          cursor = {
-            theme = "Posy_Cursor";
-            size = 24;
-            path = "${pkgs.posy-cursors}/share/icons";
-          };
-          keyboard = {
-            layout = "us";
-          };
-        };
-      };
-      # This is so the main monitor TTY ly isn't cropped
-      systemd.services.display-manager = {
-        preStart = ''
-          ${lib.getExe pkgs.fbset} -xres 1920 -yres 1080
-        '';
-      };
       # restart niri with new settings on rebuild
       system.userActivationScripts = {
         niri-reload-config = {

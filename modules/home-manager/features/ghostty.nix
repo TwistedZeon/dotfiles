@@ -12,7 +12,7 @@
       programs.home-manager.enable = true;
       programs.ghostty = {
         enable = true;
-        package = if pkgs.stdenv.isDarwin then pkgs.ghostty-bin else pkgs.ghostty;
+        package = if pkgs.stdenv.hostPlatform.isDarwin then pkgs.ghostty-bin else pkgs.ghostty;
 
         # Enable for whichever shell you plan to use!
         enableFishIntegration = true;
