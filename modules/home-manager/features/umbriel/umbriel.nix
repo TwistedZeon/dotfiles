@@ -11,7 +11,43 @@
         enable = true;
         settings = {
           general.autostart = [ "noctalia" ];
+
+          # Layout & Apperance
           layout.gap = 0;
+          appearance = {
+            border_width = 1;
+            outer_border_width = 0;
+            corner_radius = 0;
+          };
+          colors = {
+            background = "#181211FF";
+            text_primary = "#FFFFFFFF";
+            text_muted = "#B0A5A2FF";
+
+            accent_primary = "#DB4343FF";
+            accent_secondary = "#DEB764FF";
+
+            warning = "#DEB764FF";
+            error = "#9B0000FF";
+
+            insert_hint = "#DB434380";
+            backdrop = "#181211FF";
+            shadow = "#000000A0";
+
+            border = {
+              focused = "#DB4343FF";
+              unfocused = "#505050FF";
+              outer = "#181211FF";
+            };
+
+            overview = {
+              background_tint = "#181211B0";
+              workspace_background = "#181211DD";
+              badge = "#DB4343FF";
+            };
+          };
+
+          # Keyboard & Mouse
           input.keyboard.layout = "us";
           input.mouse = {
             accel_profile = "flat";
@@ -19,6 +55,8 @@
           input.cursor = {
             theme = "Posy_Cursor";
           };
+
+          # Outputs
           output.DP-1 = {
                mode = "1920x1080@143.980";
                position = [ 0 0 ];
@@ -30,6 +68,7 @@
              position = [ 1920 50 ];
              scale = 1.0;
            };
+
           workspace = [
             {
               name = "Chat";
@@ -44,6 +83,7 @@
               output = "DP-1";
             }
            ];
+
           keybinds = {
             "Mod+Return" = "spawn:ghostty";
             "Mod+E" = "spawn:nemo";
