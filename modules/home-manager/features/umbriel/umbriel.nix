@@ -10,7 +10,10 @@
       programs.umbriel = {
         enable = true;
         settings = {
-          general.autostart = [ "noctalia" ];
+          general = {
+            autostart = [ "noctalia" ];
+            show_cheatsheet = false;
+          };
 
           # Layout & Apperance
           layout.gap = 0;
@@ -18,6 +21,14 @@
             border_width = 1;
             outer_border_width = 0;
             corner_radius = 0;
+            blur = {
+              enabled = true;
+              optimized = true;
+              passes = 3;
+              radius = 3;
+              noise = 0.02;
+              saturation = 1.5;
+            };
           };
           colors = {
             background = "#181211FF";
@@ -150,6 +161,25 @@
             "Mod+T" = "window-toggle-floating";
             "Mod+F" = "window-toggle-fullscreen";
           };
+
+          # Layer Rules
+          layer_rule = [
+            {
+              match.namespace = ''^noctalia-(bar-[^"]+|notification|dock|panel|attached-panel|osd|desktop-widget-[^"]*)$'';
+              blur = true;
+              blur_ignore_alpha = 0.5;
+              blur_popups = true;
+            }
+          ];
+
+          # Window Rules
+          window_rule = [
+            {
+              match.app_id = "^com.mitchellh.ghostty$";
+              blur = true;
+              blur_optimized = true;
+            }
+          ];
         };
       };
     };
