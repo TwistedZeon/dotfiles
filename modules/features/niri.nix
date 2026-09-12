@@ -19,10 +19,6 @@
       environment.variables = {
         QT_QPA_PLATFORMTHEME = "gtk3";
       };
-      security.polkit.enable = true;
-      services.gvfs.enable = true;
-      # User's credentials manager
-      services.gnome.gnome-keyring.enable = true;
       xdg.portal = {
         enable = true;
         wlr.enable = true;

@@ -101,6 +101,11 @@
           ]);
       };
 
+      # User's credentials manager
+      services.gnome.gnome-keyring.enable = true;
+
+      services.gvfs.enable = true;
+
       # services.ananicy = {
       #   enable = true;
       #   package = pkgs.ananicy-cpp;
