@@ -18,28 +18,6 @@
         enable = true;
         package = self.packages.${pkgs.stdenv.hostPlatform.system}.myNiri;
       };
-      environment.systemPackages = with pkgs; [
-        nemo-with-extensions
-        file-roller
-        ffmpegthumbnailer
-        yazi
-        qview
-        posy-cursors
-        grim
-        slurp
-        swappy
-        wl-clipboard
-        nixd
-        nixfmt
-        biome
-        adwaita-icon-theme
-        killall
-        ddcutil
-        gpu-screen-recorder
-        gnome-calculator
-        inputs.niri-float-sticky.packages.${stdenv.hostPlatform.system}.default
-        inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
-      ];
       nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
       environment.variables = {
         QT_QPA_PLATFORMTHEME = "gtk3";
