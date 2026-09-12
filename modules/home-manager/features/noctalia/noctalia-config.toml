@@ -75,22 +75,48 @@ widget_order = [ "lockscreen-login-box@DP-1", "lockscreen-login-box@HDMI-A-1" ]
     visible = true
 
     [lockscreen_widgets.widget."lockscreen-login-box@DP-1"]
-    box_height = 0.0
-    box_width = 0.0
+    box_height = 196.0
+    box_width = 810.0
     cx = 960.0
     cy = 957.0
     output = "DP-1"
+    placement_height = 1080.0
+    placement_width = 1920.0
     rotation = 0.0
     type = "login_box"
 
+        [lockscreen_widgets.widget."lockscreen-login-box@DP-1".settings]
+        center_password_text = false
+        layout = "regular"
+        show_caps_lock = true
+        show_keyboard_layout = true
+        show_login_button = true
+        show_media = true
+        show_session_buttons = true
+        show_unlock_hint = true
+        show_weather = true
+
     [lockscreen_widgets.widget."lockscreen-login-box@HDMI-A-1"]
-    box_height = 0.0
-    box_width = 0.0
+    box_height = 196.0
+    box_width = 810.0
     cx = 720.0
     cy = 777.0
     output = "HDMI-A-1"
+    placement_height = 900.0
+    placement_width = 1440.0
     rotation = 0.0
     type = "login_box"
+
+        [lockscreen_widgets.widget."lockscreen-login-box@HDMI-A-1".settings]
+        center_password_text = false
+        layout = "regular"
+        show_caps_lock = true
+        show_keyboard_layout = true
+        show_login_button = true
+        show_media = true
+        show_session_buttons = true
+        show_unlock_hint = true
+        show_weather = true
 
 [osd.kinds]
 media = false
@@ -114,6 +140,9 @@ time_format = "%-I:%M %p"
     open_near_click_control_center = true
     shadow = false
     transparency_mode = "soft"
+
+    [shell.screenshot]
+    annotate = true
 
     [[shell.session.actions]]
     action = "logout"
@@ -147,6 +176,9 @@ time_format = "%-I:%M %p"
 [theme]
 custom_palette = "MyPalette"
 source = "custom"
+
+    [theme.templates]
+    builtin_ids = []
 
 [wallpaper]
 directory = "/home/zeon/Pictures/Wallpaper"

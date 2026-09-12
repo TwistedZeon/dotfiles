@@ -15,12 +15,8 @@
         nemo-with-extensions
         file-roller
         ffmpegthumbnailer
-        yazi
         qview
         posy-cursors
-        grim
-        slurp
-        swappy
         wl-clipboard
         nixd
         nixfmt
