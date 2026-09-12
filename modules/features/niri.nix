@@ -11,9 +11,6 @@
       ...
     }:
     {
-      imports = [
-        inputs.noctalia-greeter.nixosModules.default
-      ];
       programs.niri = {
         enable = true;
         package = self.packages.${pkgs.stdenv.hostPlatform.system}.myNiri;

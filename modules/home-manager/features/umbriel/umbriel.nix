@@ -132,6 +132,8 @@
             "XF86AudioPause" = "spawn:noctalia msg media toggle";
 
             # Workspace Switching
+            "Alt+Tab" = "window-focus-last";
+
             "Mod+Left" = "column-move-left";
             "Mod+Right" = "column-move-right";
 
