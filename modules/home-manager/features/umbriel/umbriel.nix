@@ -290,7 +290,6 @@
             }
             {
               match.app_id = "dev.zed.Zed";
-              match.is_alone = true;
               default_maximize = true;
             }
           ];
