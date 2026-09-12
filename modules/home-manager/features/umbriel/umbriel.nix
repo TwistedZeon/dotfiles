@@ -11,12 +11,23 @@
         enable = true;
         settings = {
           general = {
-            autostart = [ "noctalia" ];
+            autostart = [
+              "noctalia"
+              "thunderbird"
+              "sleep 5s && vesktop"
+              "sleep 2s && steam"
+            ];
             show_cheatsheet = false;
           };
 
           # Layout & Apperance
-          layout.gap = 0;
+          layout = {
+            gap = 0;
+            scrolling = {
+              default_width_fraction = 0.5; # Not sure if I need this yet
+              center_underfull_strip = false;
+            };
+          };
           appearance = {
             border_width = 1;
             outer_border_width = 0;
@@ -73,6 +84,7 @@
                position = [ 0 0 ];
                scale = 1.0;
                workspaces = "dynamic";
+               vrr = "disabled";
              };
           output.HDMI-A-1 = {
              mode = "1440x900@74.984";
@@ -174,10 +186,107 @@
 
           # Window Rules
           window_rule = [
+            # Chat
+            {
+              match.app_id = "thunderbird";
+              default_maximize = true;
+              default_workspace = "Chat";
+              default_scrolling_column_order = 1;
+            }
+            {
+              match.app_id = "vesktop";
+              default_maximize = true;
+              default_workspace = "Chat";
+              default_scrolling_column_order = 2;
+            }
+            {
+              match.app_id = "mumble";
+              default_maximize = true;
+              default_workspace = "Chat";
+              default_scrolling_column_order = 3;
+            }
+            {
+              match.app_id = "mumble";
+              match.title = "Mumble Server Connect";
+              default_maximize = false;
+              default_workspace = "Chat";
+            }
+            # Gaming
+            {
+              match.app_id = "steam";
+              default_maximize = true;
+              default_workspace = "Gaming";
+              default_scrolling_column_order = 1;
+            }
+            {
+              match.app_id = "steam";
+              match.title = "Friends List";
+              default_workspace = "Gaming";
+              default_maximize = false;
+              default_width = 0.25;
+            }
+            {
+              match.app_id = "io.github.Faugus.faugus-launcher";
+              default_maximize = true;
+              default_workspace = "Gaming";
+              default_scrolling_column_order = 2;
+            }
+            {
+              match.title = "PlayOnline Viewer Ver.1.18.15e";
+              default_workspace = "Gaming";
+              default_maximize = false;
+              default_floating = true;
+            }
+            {
+              match.app_id = "org.prismlauncher.PrismLauncher";
+              default_workspace = "Gaming";
+            }
+            # Main
+            {
+              match.app_id = "firefox";
+              default_maximize = true;
+              default_workspace = "Main";
+              default_scrolling_column_order = 1;
+            }
+            {
+              match.title = "^(Picture-in-Picture|Picture in picture)$";
+              default_pinned = true;
+              default_floating = true;
+              default_maximize = false;
+              default_size = [480 270];
+              default_position = {
+                x = 32;
+                y = 32;
+                anchor = "top_right";
+              };
+            }
+            # Other
+            {
+              match.xdg_tag = "proton-game";
+              vrr = "always";
+              default_floating = false;
+            }
             {
               match.app_id = "^com.mitchellh.ghostty$";
               blur = true;
               blur_optimized = true;
+              match.is_alone = true;
+              default_maximize = true;
+            }
+            {
+              match.app_id = "nemo";
+              match.is_alone = true;
+              default_maximize = true;
+            }
+            {
+              match.app_id = "feishin";
+              match.is_alone = true;
+              default_maximize = true;
+            }
+            {
+              match.app_id = "dev.zed.Zed";
+              match.is_alone = true;
+              default_maximize = true;
             }
           ];
         };
