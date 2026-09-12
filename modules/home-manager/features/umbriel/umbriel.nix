@@ -70,7 +70,10 @@
           };
 
           # Keyboard & Mouse
-          input.keyboard.layout = "us";
+          input.keyboard = {
+            layout = "us";
+            numlock_toggle = true;
+          };
           input.mouse = {
             accel_profile = "flat";
           };
