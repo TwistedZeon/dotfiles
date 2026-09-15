@@ -246,6 +246,11 @@
               match.app_id = "org.prismlauncher.PrismLauncher";
               default_workspace = "Gaming";
             }
+            {
+              match.app_id = "heroic";
+              default_maximize = true;
+              default_workspace = "Gaming";
+            }
             # Main
             {
               match.app_id = "firefox";
@@ -268,6 +273,11 @@
             # Other
             {
               match.xdg_tag = "proton-game";
+              vrr = "always";
+              default_floating = false;
+            }
+            {
+              match.app_id = "steam_app.*";
               vrr = "always";
               default_floating = false;
             }
