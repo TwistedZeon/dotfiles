@@ -24,7 +24,7 @@
           layout = {
             gap = 0;
             scrolling = {
-              default_width_fraction = 0.5; # Not sure if I need this yet
+              default_extent_fraction = 0.5; # Not sure if I need this yet
               center_underfull_strip = false;
             };
           };
@@ -228,7 +228,7 @@
               match.title = "Friends List";
               default_workspace = "Gaming";
               default_maximize = false;
-              default_width = 0.25;
+              default_scrolling_extent = 0.25;
             }
             {
               match.app_id = "io.github.Faugus.faugus-launcher";
@@ -263,7 +263,10 @@
               default_pinned = true;
               default_floating = true;
               default_maximize = false;
-              default_size = [480 270];
+              default_floating_size_px = {
+                width = 480;
+                height = 270;
+              };
               default_position = {
                 x = 32;
                 y = 32;
