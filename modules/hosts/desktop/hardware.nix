@@ -33,6 +33,7 @@
       boot.kernelModules = [
         "kvm-amd"
         "hid-playstation"
+        "ntsync"
       ];
       boot.kernelParams = [
         # Limit ZFS dirty data to 512MB (prevents massive I/O spikes)
