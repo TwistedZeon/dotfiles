@@ -16,6 +16,7 @@
           "users" # Allows any user to mount and unmount
           "nofail" # Prevent system from failing if this drive doesn't mount
           "x-gvfs-show"
+          "exec"
         ];
       };
       fileSystems."/mnt/Linux-Extra" = {
@@ -27,6 +28,7 @@
           "users" # Allows any user to mount and unmount
           "nofail" # Prevent system from failing if this drive doesn't mount
           "x-gvfs-show"
+          "exec"
         ];
       };
       fileSystems."/mnt/Massive-HDD" = {
@@ -38,6 +40,7 @@
           "users" # Allows any user to mount and unmount
           "nofail" # Prevent system from failing if this drive doesn't mount
           "x-gvfs-show"
+          "exec"
         ];
       };
     };
