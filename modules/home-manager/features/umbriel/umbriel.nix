@@ -251,6 +251,16 @@
               default_maximize = true;
               default_workspace = "Gaming";
             }
+            {
+              match.app_id = "scummvm";
+              default_maximize = true;
+              default_workspace = "Gaming";
+            }
+            {
+              match.app_id = "PPSSPPSDL";
+              default_maximize = true;
+              default_workspace = "Gaming";
+            }
             # Main
             {
               match.app_id = "firefox";
