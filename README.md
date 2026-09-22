@@ -7,7 +7,7 @@ This is my personal NixOS configuration and not meant for general consumption.
 - Multiple NixOS configurations, including desktop and VM
 - Automatic ZFS snapshots with rotation
 - Tweaked ZFS for better I/O
-- Niri with noctalia v5 shell & greeter
+- Umbriel with noctalia v5 shell & greeter
 
 ## How to Install
 Run the following commands from a terminal on a NixOS live iso / from a tty on the minimal iso.
