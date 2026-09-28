@@ -207,10 +207,15 @@
           "networkmanager"
           "wheel"
           "gamemode"
+          "docker"
         ];
         # packages = with pkgs; [
         #  thunderbird
         # ];
+      };
+
+      virtualisation.docker = {
+        enable = true;
       };
 
       # Fonts

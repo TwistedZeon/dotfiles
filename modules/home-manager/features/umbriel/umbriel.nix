@@ -218,6 +218,16 @@
             }
             # Gaming
             {
+              match.xdg_tag = "proton-game";
+              vrr = "always";
+              default_floating = false;
+            }
+            {
+              match.app_id = "steam_app.*";
+              vrr = "always";
+              default_floating = false;
+            }
+            {
               match.app_id = "steam";
               default_maximize = true;
               default_workspace = "Gaming";
@@ -237,10 +247,14 @@
               default_scrolling_column_order = 2;
             }
             {
-              match.title = "PlayOnline Viewer Ver.1.18.15e";
+              match.title = "^PlayOnline Viewer Ver[.][0-9]+[.][0-9]+[.][0-9]+[a-z]? - \\[Ashita - [0-9]+[.][0-9]+[.][0-9]+[.][0-9]+\\]$";
               default_workspace = "Gaming";
               default_maximize = false;
               default_floating = true;
+              default_floating_size_px = {
+                width = 640;
+                height = 480;
+              };
             }
             {
               match.app_id = "org.prismlauncher.PrismLauncher";
@@ -285,16 +299,6 @@
             }
             # Other
             {
-              match.xdg_tag = "proton-game";
-              vrr = "always";
-              default_floating = false;
-            }
-            {
-              match.app_id = "steam_app.*";
-              vrr = "always";
-              default_floating = false;
-            }
-            {
               match.app_id = "^com.mitchellh.ghostty$";
               blur = true;
               blur_optimized = true;
@@ -313,6 +317,10 @@
             }
             {
               match.app_id = "dev.zed.Zed";
+              default_maximize = true;
+            }
+            {
+              match.app_id = "winboat";
               default_maximize = true;
             }
           ];

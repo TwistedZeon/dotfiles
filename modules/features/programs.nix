@@ -42,6 +42,7 @@
         samba
         plex-desktop
         jellyfin-mpv-shim
+        winboat
 
         # Improved which for nix
         (writeShellApplication {
