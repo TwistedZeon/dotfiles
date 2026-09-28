@@ -41,7 +41,6 @@
       nix = {
         channel.enable = false;
         registry = (lib.mapAttrs (_: flake: { inherit flake; }) inputs);
-        nixPath = lib.mapAttrsToList (n: _: "${n}") inputs;
         settings = {
           nix-path = lib.mapAttrsToList (n: _: "${n}") inputs;
           flake-registry = ""; # optional, ensures flakes are truly self-contained

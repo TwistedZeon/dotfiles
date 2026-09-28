@@ -169,10 +169,10 @@
             # Layout Controls
             "Mod+Ctrl+F" = "window-toggle-maximize";
             "Mod+C" = "column-center";
-            "Mod+Minus" = "window-modify-width:-0.1";
-            "Mod+Equal" = "window-modify-width:0.1";
-            "Mod+Shift+Minus" = "window-modify-height:-0.1";
-            "Mod+Shift+Equal" = "window-modify-height:0.1";
+            "Mod+Minus" = "window-modify-primary-extent:-0.1";
+            "Mod+Equal" = "window-modify-primary-extent:0.1";
+            "Mod+Shift+Minus" = "window-modify-secondary-extent:-0.1";
+            "Mod+Shift+Equal" = "window-modify-secondary-extent:0.1";
 
             # Modes
             "Mod+T" = "window-toggle-floating";
