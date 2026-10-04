@@ -173,6 +173,10 @@ time_format = "%-I:%M %p"
     shortcut = "4"
     variant = "destructive"
 
+    [shell.window_switcher]
+    mru = true
+    style = "compact"
+
 [theme]
 custom_palette = "MyPalette"
 source = "custom"
