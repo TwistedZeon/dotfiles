@@ -323,6 +323,10 @@
               match.app_id = "winboat";
               default_maximize = true;
             }
+            {
+              match.app_id = "Ps5upload-desktop";
+              default_maximize = true;
+            }
           ];
         };
       };

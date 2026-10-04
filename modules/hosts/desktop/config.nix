@@ -263,6 +263,7 @@
       # networking.firewall.allowedTCPPorts = [ ... ];
       networking.firewall.allowedTCPPorts = [
         38008
+        19113
       ];
       networking.firewall.allowedTCPPortRanges = [
         {
