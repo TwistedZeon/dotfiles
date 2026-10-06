@@ -120,6 +120,7 @@
             "Mod+Shift+S" = "spawn:noctalia msg screenshot-region";
             "Mod+Ctrl+S" = "spawn:noctalia msg screenshot-fullscreen";
             "Mod+Shift+Q" = "spawn:noctalia msg panel-toggle session";
+            "Mod+Shift+R" = "spawn:noctalia msg plugin noctalia/screen_recorder:service all toggle focused";
 
             # Media Keys
             "XF86AudioRaiseVolume" = "spawn:noctalia msg volume-up";

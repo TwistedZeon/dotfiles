@@ -121,6 +121,10 @@ widget_order = [ "lockscreen-login-box@DP-1", "lockscreen-login-box@HDMI-A-1" ]
 [osd.kinds]
 media = false
 
+[plugin_settings."noctalia/screen_recorder"]
+audio_source = "custom"
+custom_audio_sources = "alsa_output.pci-0000_0d_00.4.analog-stereo.monitor"
+
 [plugins]
 enabled = [ "noctalia/screen_recorder" ]
 

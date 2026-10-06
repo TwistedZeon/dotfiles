@@ -24,7 +24,6 @@
         adwaita-icon-theme
         killall
         ddcutil
-        gpu-screen-recorder
         gnome-calculator
         btop
         filezilla
@@ -61,5 +60,8 @@
           text = /* sh */ "pw-loopback --capture alsa_input.pci-0000_0d_00.4.analog-stereo";
         })
       ];
+      programs.gpu-screen-recorder = {
+        enable = true;
+      };
     };
 }
