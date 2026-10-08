@@ -192,16 +192,16 @@ source = "custom"
 directory = "/home/zeon/Pictures/Wallpaper"
 
     [wallpaper.default]
-    path = "/home/zeon/Pictures/Wallpaper/AhkanaFFXI.png"
+    path = "/home/zeon/Pictures/Wallpaper/YoruWP1.png"
 
     [wallpaper.last]
-    path = "/home/zeon/Pictures/Wallpaper/AhkanaFFXI.png"
+    path = "/home/zeon/Pictures/Wallpaper/YoruWP1.png"
 
     [wallpaper.monitors.DP-1]
-    path = "/home/zeon/Pictures/Wallpaper/AhkanaFFXI.png"
+    path = "/home/zeon/Pictures/Wallpaper/YoruWP1.png"
 
     [wallpaper.monitors.HDMI-A-1]
-    path = "/home/zeon/Pictures/Wallpaper/AhkanaFFXI.png"
+    path = "/home/zeon/Pictures/Wallpaper/YoruWP1.png"
 
 [widget.Media]
 capsule = true
