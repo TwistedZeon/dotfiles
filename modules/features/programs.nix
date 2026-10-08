@@ -42,6 +42,8 @@
         plex-desktop
         jellyfin-mpv-shim
         winboat
+        python3
+        yt-dlp
 
         # Improved which for nix
         (writeShellApplication {

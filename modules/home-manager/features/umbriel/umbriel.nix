@@ -325,7 +325,11 @@
               default_maximize = true;
             }
             {
-              match.app_id = "Ps5upload-desktop";
+              match.app_id = "ps5upload-desktop";
+              default_maximize = true;
+            }
+            {
+              match.app_id = "tv.plex.Plex";
               default_maximize = true;
             }
           ];
