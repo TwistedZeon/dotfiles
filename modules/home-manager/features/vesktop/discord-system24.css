@@ -2,7 +2,7 @@
 * @name Noctalia System24
 * @description A fork of 'System24' for Noctalia Shell
 * @author Ezequielgk
-* @version 2.0.0
+* @version 2.1.0
 */
 
 @import url("https://refact0r.github.io/system24/build/system24.css");
@@ -386,4 +386,117 @@ pre code span {
 
 .theme-light [class*="reaction"][class*="reactionMe"] [class*="reactionCount"] {
     color: var(--text-subtle) !important;
+}
+
+/* =============================== /
+/ AUTO-HIDE SCROLLBARS           /
+/ =============================== */
+
+/* Keep scrollbars available, but make them visually disappear until the
+   scrollable element is hovered or focused. CSS-only themes cannot reliably
+   detect a scroll event and run a timed fade-out, so hover/focus reveals them. */
+html,
+body,
+html body [class] {
+    scrollbar-width: thin !important;
+    scrollbar-color: transparent transparent !important;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar,
+html body *::-webkit-scrollbar,
+html body [class]::-webkit-scrollbar {
+    display: block !important;
+    width: 9px !important;
+    height: 9px !important;
+}
+
+html::-webkit-scrollbar-track,
+body::-webkit-scrollbar-track,
+html body *::-webkit-scrollbar-track,
+html body [class]::-webkit-scrollbar-track {
+    background: transparent !important;
+    border: 1px solid transparent !important;
+    border-radius: 0 !important;
+}
+
+html::-webkit-scrollbar-thumb,
+body::-webkit-scrollbar-thumb,
+html body *::-webkit-scrollbar-thumb,
+html body [class]::-webkit-scrollbar-thumb {
+    display: block !important;
+    visibility: visible !important;
+    background: transparent !important;
+    border: 2px solid transparent !important;
+    border-radius: 0 !important;
+    background-clip: padding-box !important;
+    min-height: 28px !important;
+}
+
+/* Reveal a scroller when the pointer is over it, or when it has keyboard focus.
+   Ancestor scrollers also match :hover while the pointer is over their contents. */
+html body [class]:hover,
+html body [class]:focus-within,
+html body [class]:active {
+    scrollbar-color: var(--accent-1) var(--bg-2) !important;
+}
+
+html body [class]:hover::-webkit-scrollbar-track,
+html body [class]:focus-within::-webkit-scrollbar-track,
+html body [class]:active::-webkit-scrollbar-track {
+    background: var(--bg-2) !important;
+    border-color: var(--bg-1) !important;
+}
+
+html body [class]:hover::-webkit-scrollbar-thumb,
+html body [class]:focus-within::-webkit-scrollbar-thumb,
+html body [class]:active::-webkit-scrollbar-thumb {
+    background: var(--accent-1) !important;
+    border-color: var(--bg-2) !important;
+}
+
+html body [class]:hover::-webkit-scrollbar-thumb:hover,
+html body [class]:focus-within::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-3) !important;
+}
+
+html::-webkit-scrollbar-corner,
+body::-webkit-scrollbar-corner,
+html body *::-webkit-scrollbar-corner,
+html body [class]::-webkit-scrollbar-corner {
+    background: transparent !important;
+}
+
+/* =============================== /
+/ VENCORD PLATFORM INDICATORS     /
+/ =============================== */
+
+/* These rules apply when Vencord's PlatformIndicators plugin is enabled.
+   Keep its device icons visible and aligned with the System24 palette. */
+.vc-platform-indicator {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 5px !important;
+    margin-inline-start: 6px !important;
+    vertical-align: middle !important;
+}
+
+.vc-platform-indicator svg {
+    display: block !important;
+    flex: 0 0 auto !important;
+    width: 15px !important;
+    height: 15px !important;
+    opacity: 1 !important;
+}
+
+/* Give the mobile handset a small outlined tile, so it is easy to distinguish
+   from the plain desktop/web glyphs without losing its presence-state color. */
+.vc-platform-indicator svg:has(path[d^="M15.5 1h-8A2.5A0"]) {
+    box-sizing: content-box !important;
+    width: 13px !important;
+    height: 13px !important;
+    padding: 2px !important;
+    background-color: var(--bg-2) !important;
+    outline: 1px solid var(--accent-1) !important;
+    outline-offset: 0 !important;
 }
