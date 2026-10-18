@@ -18,6 +18,8 @@
 
         server2-u = "sudo mount -t nfs 192.168.0.205:/750GB /mnt/Server4TB";
 
+        server3-u = "sudo mount -t nfs 192.168.0.205:/4TB-2 /mnt/Server4TB";
+
         ps2 = "udpfsd -fsroot /mnt/4TB/PS2 -bind 192.168.0.129:62967 -port 62966 -verbose";
 
         ps3 = "ps3netsrv /mnt/Linux-Extra/PS3";
