@@ -182,8 +182,11 @@ time_format = "%-I:%M %p"
     style = "compact"
 
 [theme]
+community_palette = "Oxocarbon"
 custom_palette = "MyPalette"
+mode = "dark"
 source = "custom"
+wallpaper_scheme = "m3-content"
 
     [theme.templates]
     builtin_ids = []
@@ -192,16 +195,16 @@ source = "custom"
 directory = "/home/zeon/Pictures/Wallpaper"
 
     [wallpaper.default]
-    path = "/home/zeon/Pictures/Wallpaper/YoruWP1.png"
+    path = "/home/zeon/Pictures/Wallpaper/JulFixed.png"
 
     [wallpaper.last]
-    path = "/home/zeon/Pictures/Wallpaper/YoruWP1.png"
+    path = "/home/zeon/Pictures/Wallpaper/JulFixed.png"
 
     [wallpaper.monitors.DP-1]
-    path = "/home/zeon/Pictures/Wallpaper/YoruWP1.png"
+    path = "/home/zeon/Pictures/Wallpaper/JulFixed.png"
 
     [wallpaper.monitors.HDMI-A-1]
-    path = "/home/zeon/Pictures/Wallpaper/YoruWP1.png"
+    path = "/home/zeon/Pictures/Wallpaper/JulFixed.png"
 
 [widget.Media]
 capsule = true
@@ -244,7 +247,7 @@ type = "noctalia/screen_recorder:recorder"
 stat = "ram_used"
 
 [widget.taskbar]
-pinned = [ "nemo" ]
+pinned = []
 show_all_outputs = true
 show_window_title = true
 workspace_group_capsule = false
