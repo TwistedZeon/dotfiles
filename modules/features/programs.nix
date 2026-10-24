@@ -31,7 +31,7 @@
         libreoffice
         pwvucontrol
         feishin
-        # handbrake
+        handbrake
         picard
         rsgain
         virt-viewer
@@ -44,6 +44,7 @@
         winboat
         python3
         yt-dlp
+        mkvtoolnix
 
         # Improved which for nix
         (writeShellApplication {
