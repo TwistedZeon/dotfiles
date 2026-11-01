@@ -18,6 +18,9 @@
               "sleep 2s && steam"
             ];
             show_cheatsheet = false;
+            xwayland = true;
+            xwayland_native_resolution = false;
+            xwayland_xsettings = true;
           };
 
           # Layout & Apperance
