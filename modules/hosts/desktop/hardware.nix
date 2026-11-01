@@ -18,7 +18,7 @@
 
       boot = {
         kernelPackages =
-          pkgs.linuxPackages_latest;
+          pkgs.linuxPackages_7_2;
       };
 
       boot.initrd.availableKernelModules = [
