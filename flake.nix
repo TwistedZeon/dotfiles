@@ -1,6 +1,8 @@
 {
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    # Pinned kernel packages for Linux 7.2.15 + OpenZFS 2.4.4
+    nixpkgs-kernel.url = "github:NixOS/nixpkgs/603155453f5342f93db01e6cacbd8026881d3bc3";
     nixpkgs-patcher.url = "github:gepbird/nixpkgs-patcher";
 
     flake-parts.url = "github:hercules-ci/flake-parts";

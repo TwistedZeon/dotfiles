@@ -53,7 +53,7 @@
             showAllChannels = true;
           };
           IgnoreActivities = {
-            enabled = true;
+            enabled = false;
             ignorePlaying = true;
           };
           NoProfileThemes.enabled = true;

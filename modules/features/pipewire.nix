@@ -16,7 +16,6 @@
         alsa.enable = true;
         alsa.support32Bit = true;
         pulse.enable = true;
-        jack.enable = true;
         extraLadspaPackages = [ pkgs.deepfilternet ];
 
         # Increase latency a bit to stop crackles

@@ -1,8 +1,6 @@
-{
-  ...
-}:
-{
 
+{ inputs, ... }:
+{
   flake.nixosModules.desktopHardware =
     {
       config,
@@ -11,14 +9,16 @@
       pkgs,
       ...
     }:
+    let
+      kernelPkgs = inputs.nixpkgs-kernel.legacyPackages.${pkgs.stdenv.hostPlatform.system};
+    in
     {
       imports = [
         (modulesPath + "/installer/scan/not-detected.nix")
       ];
 
       boot = {
-        kernelPackages =
-          pkgs.linuxPackages_7_2;
+        kernelPackages = kernelPkgs.linuxPackages_7_2;
       };
 
       boot.initrd.availableKernelModules = [
@@ -29,12 +29,15 @@
         "usb_storage"
         "sd_mod"
       ];
+
       boot.initrd.kernelModules = [ ];
+
       boot.kernelModules = [
         "kvm-amd"
         "hid-playstation"
         "ntsync"
       ];
+
       boot.kernelParams = [
         # Limit ZFS dirty data to 512MB (prevents massive I/O spikes)
         "zfs.zfs_dirty_data_max=536870912"
@@ -42,10 +45,12 @@
         # Start flushing to disk sooner (at 64MB) to keep I/O consistent
         "zfs.zfs_dirty_data_sync_percent=10"
       ];
+
       boot.extraModulePackages = [ ];
 
       nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
-      hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
-    };
 
+      hardware.cpu.amd.updateMicrocode =
+        lib.mkDefault config.hardware.enableRedistributableFirmware;
+    };
 }
