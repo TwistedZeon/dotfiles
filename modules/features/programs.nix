@@ -45,6 +45,7 @@
         python3
         yt-dlp
         mkvtoolnix
+        jan
 
         # Improved which for nix
         (writeShellApplication {
