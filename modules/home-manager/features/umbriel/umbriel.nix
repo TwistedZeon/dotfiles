@@ -195,6 +195,11 @@
 
           # Window Rules
           window_rule = [
+            # Automatically fill the workspace when only one tiled column remains
+            {
+              match.is_alone = true;
+              default_maximize = true;
+            }
             # Chat
             {
               match.app_id = "thunderbird";
@@ -306,18 +311,6 @@
               match.app_id = "^com.mitchellh.ghostty$";
               blur = true;
               blur_optimized = true;
-              match.is_alone = true;
-              default_maximize = true;
-            }
-            {
-              match.app_id = "nemo";
-              match.is_alone = true;
-              default_maximize = true;
-            }
-            {
-              match.app_id = "feishin";
-              match.is_alone = true;
-              default_maximize = true;
             }
             {
               match.app_id = "dev.zed.Zed";
