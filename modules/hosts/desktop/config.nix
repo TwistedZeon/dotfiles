@@ -66,6 +66,13 @@
       # Zram
       zramSwap.enable = true; # Creates a zram block device and uses it as a swap device
 
+      # Ananicy-Cpp
+      services.ananicy = {
+        enable = true;
+        package = pkgs.ananicy-cpp;
+        rulesProvider = pkgs.ananicy-rules-cachyos;
+      };
+
       # Amd GPU
       hardware.graphics = {
         enable = true;
