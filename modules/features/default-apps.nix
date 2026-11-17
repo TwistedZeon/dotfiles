@@ -23,7 +23,7 @@
         "application/x-extension-xht" = "firefox.desktop";
         "video/*" = "mpv.desktop";
         "image/*" = "com.interversehq.qView.desktop";
-        "inode/directory" = "nemo";
+        "inode/directory" = "dev.noctalia.luciole.desktop";
       };
     };
 }

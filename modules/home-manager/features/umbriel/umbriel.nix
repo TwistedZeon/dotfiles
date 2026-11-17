@@ -115,7 +115,7 @@
 
           keybinds = {
             "Mod+Return" = "spawn ghostty";
-            "Mod+E" = "spawn nemo";
+            "Mod+E" = "spawn luciole";
             "Mod+O" = "overview-toggle";
             "Mod+Q" = "window-close";
             "Mod+S" = "spawn noctalia msg panel-toggle launcher";
