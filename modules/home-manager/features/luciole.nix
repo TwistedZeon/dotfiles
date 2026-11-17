@@ -2,9 +2,11 @@
   ...
 }:
 {
-  flake.homeModules.luciole = {
-    programs.luciole = {
-      enable = true;
-    };
+  flake.homeModules.luciole = { pkgs, ... }: {
+    programs.luciole.enable = true;
+
+    home.packages = [
+      pkgs.papirus-icon-theme
+    ];
   };
 }

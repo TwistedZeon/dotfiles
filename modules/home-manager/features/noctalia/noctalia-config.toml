@@ -33,7 +33,7 @@ order = [ "default", "Bottom" ]
 
         [[bar.default.capsule_group]]
         enabled = true
-        fill = "surface_variant"
+        fill = "surface_container"
         id = "g1"
         members = [ "notifications", "clipboard", "volume", "brightness", "battery", "clock" ]
         opacity = 1.0
@@ -189,22 +189,23 @@ source = "custom"
 wallpaper_scheme = "m3-content"
 
     [theme.templates]
-    builtin_ids = []
+    builtin_ids = [ "luciole" ]
+    community_ids = [ "papirus-icons" ]
 
 [wallpaper]
 directory = "/home/zeon/Pictures/Wallpaper"
 
     [wallpaper.default]
-    path = "/home/zeon/Pictures/Wallpaper/JulFixed.png"
+    path = "/home/zeon/Pictures/Wallpaper/autumfixed.png"
 
     [wallpaper.last]
-    path = "/home/zeon/Pictures/Wallpaper/JulFixed.png"
+    path = "/home/zeon/Pictures/Wallpaper/autumfixed.png"
 
     [wallpaper.monitors.DP-1]
-    path = "/home/zeon/Pictures/Wallpaper/JulFixed.png"
+    path = "/home/zeon/Pictures/Wallpaper/autumfixed.png"
 
     [wallpaper.monitors.HDMI-A-1]
-    path = "/home/zeon/Pictures/Wallpaper/JulFixed.png"
+    path = "/home/zeon/Pictures/Wallpaper/autumfixed.png"
 
 [widget.Media]
 capsule = true
