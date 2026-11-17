@@ -3,7 +3,6 @@
 }:
 {
   flake.homeModules.clipboard = {
-    programs.home-manager.enable = true;
     services.cliphist = {
       enable = true;
 

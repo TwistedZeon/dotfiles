@@ -34,6 +34,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    luciole = {
+      url = "github:noctalia-dev/luciole";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     # zen-browser = {
     #   url = "github:youwen5/zen-browser-flake";
     #   inputs.nixpkgs.follows = "nixpkgs";

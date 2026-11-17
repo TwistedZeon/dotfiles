@@ -3,7 +3,6 @@
 }:
 {
   flake.homeModules.fish = {
-    programs.home-manager.enable = true;
     programs.fish = {
       enable = true;
       interactiveShellInit = ''

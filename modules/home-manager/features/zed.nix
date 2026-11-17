@@ -3,7 +3,6 @@
 }:
 {
   flake.homeModules.zed = {
-    programs.home-manager.enable = true;
     programs.zed-editor = {
       enable = true;
       extensions = [

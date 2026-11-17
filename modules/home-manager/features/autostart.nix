@@ -8,7 +8,6 @@
       ...
     }:
     {
-      programs.home-manager.enable = true;
       xdg.configFile."autostart/vesktop.desktop".text = ''
         [Desktop Entry]
         Type=Application

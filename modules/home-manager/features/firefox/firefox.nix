@@ -3,7 +3,6 @@
 }:
 {
   flake.homeModules.firefox = {
-    programs.home-manager.enable = true;
     programs.firefox = {
       enable = true;
 

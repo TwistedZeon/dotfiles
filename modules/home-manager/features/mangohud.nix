@@ -3,7 +3,6 @@
 }:
 {
   flake.homeModules.mangohud = {
-    programs.home-manager.enable = true;
     programs.mangohud = {
       enable = true;
       enableSessionWide = true;

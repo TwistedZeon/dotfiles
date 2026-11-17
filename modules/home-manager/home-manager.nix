@@ -39,6 +39,8 @@
             self.homeModules.noctalia
             inputs.umbriel.homeModules.default
             self.homeModules.umbriel
+            inputs.luciole.homeModules.default
+            self.homeModules.luciole
           ];
 
           home.stateVersion = "25.11";

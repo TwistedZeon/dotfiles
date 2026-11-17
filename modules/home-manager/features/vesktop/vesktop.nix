@@ -3,7 +3,6 @@
 }:
 {
   flake.homeModules.vesktop = {
-    programs.home-manager.enable = true;
     programs.vesktop = {
       enable = true;
 

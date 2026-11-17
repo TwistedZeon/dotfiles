@@ -71,6 +71,26 @@
         "type": "github"
       }
     },
+    "luciole": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1794883235,
+        "narHash": "sha256-3atOumH1LNM6cR+iT//+b7g31p4t+3tfr21naVJ5gPk=",
+        "owner": "noctalia-dev",
+        "repo": "luciole",
+        "rev": "de81bf701a30d54d02f1561915d90c3a15adff8a",
+        "type": "github"
+      },
+      "original": {
+        "owner": "noctalia-dev",
+        "repo": "luciole",
+        "type": "github"
+      }
+    },
     "niri-float-sticky": {
       "inputs": {
         "flake-utils": "flake-utils",
@@ -227,6 +247,7 @@
         "flake-parts": "flake-parts",
         "home-manager": "home-manager",
         "import-tree": "import-tree",
+        "luciole": "luciole",
         "niri-float-sticky": "niri-float-sticky",
         "nixpkgs": "nixpkgs",
         "nixpkgs-kernel": "nixpkgs-kernel",

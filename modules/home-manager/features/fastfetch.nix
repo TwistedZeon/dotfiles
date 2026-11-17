@@ -3,7 +3,6 @@
 }:
 {
   flake.homeModules.fastfetch = {
-    programs.home-manager.enable = true;
     programs.fastfetch = {
       enable = true;
       settings = {
